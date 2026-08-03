@@ -1,0 +1,25 @@
+# run_name: random_test
+# timestamp: 20260811_020607
+# ---- config ----
+# goal_position: (20, 0, -3)
+# start_position: (0, 0, -3)
+# max_episode_steps: 150
+# dt: 0.5
+# speed: 2.0
+# state_dim: 15
+# action_dim: 27
+# lr: 0.0001
+# gamma: 0.99
+# buffer_capacity: 1000000
+# batch_size: 32
+# temp_start: 1.0
+# temp_end: 0.05
+# temp_decay_steps: 24000
+# temp_schedule: linear
+# target_update_freq: 250
+# use_double: True
+# use_dueling: True
+# ----------------
+episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,temperature,start_position,goal_position,is_success,is_crash,is_out_of_bounds,is_timeout
+1,-8.8566,-8.8566,0.0,150,,0.48,0.9941,(0, 0, -3),(20, 0, -3),False,False,False,True
+2,-8.8703,-8.8635,0.0,150,,1.19,0.9881,(0, 0, -3),(20, 0, -3),False,False,False,True

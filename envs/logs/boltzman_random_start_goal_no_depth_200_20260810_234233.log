@@ -1,0 +1,234 @@
+# run_name: boltzman_random_start_goal_no_depth_200
+# timestamp: 20260810_234233
+# ---- config ----
+# goal_position: (20, 0, -3)
+# start_position: (0, 0, -3)
+# max_episode_steps: 150
+# dt: 0.5
+# speed: 2.0
+# state_dim: 15
+# action_dim: 27
+# lr: 0.0001
+# gamma: 0.99
+# buffer_capacity: 1000000
+# batch_size: 32
+# temp_start: 1.0
+# temp_end: 0.05
+# temp_decay_steps: 24000
+# temp_schedule: linear
+# target_update_freq: 250
+# use_double: True
+# use_dueling: True
+# ----------------
+episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,temperature,is_success,is_crash,is_out_of_bounds,is_timeout
+1,-6.1166,-6.1166,0.0,150,,0.48,0.9941,False,False,False,True
+2,-7.1793,-6.648,0.0,150,,0.92,0.9881,False,False,False,True
+3,-7.3283,-6.8748,0.0,150,,1.35,0.9822,False,False,False,True
+4,-6.6974,-6.8304,0.0,150,,1.79,0.9762,False,False,False,True
+5,-1.4519,-5.7547,0.0,150,,2.22,0.9703,False,False,False,True
+6,-2.3025,-5.1793,0.0,101,,2.52,0.9663,False,False,True,False
+7,7.4758,-3.3715,0.0,150,,2.96,0.9604,False,False,False,True
+8,2.0513,-2.6936,0.0,146,,3.38,0.9546,False,False,True,False
+9,4.2536,-1.9217,0.0,21,,3.45,0.9538,False,False,True,False
+10,0.7778,-1.6517,0.0,150,,3.88,0.9478,False,False,False,True
+11,9.7782,-0.0623,10.0,96,,4.17,0.944,True,False,False,False
+12,7.0056,1.3562,10.0,150,,4.6,0.9381,False,False,False,True
+13,4.469,2.536,10.0,150,,5.04,0.9322,False,False,False,True
+14,0.4425,3.2499,10.0,150,,5.48,0.9262,False,False,False,True
+15,10.0691,4.402,20.0,91,,5.75,0.9226,True,False,False,False
+16,-3.9799,4.2343,20.0,150,,6.19,0.9167,False,False,False,True
+17,3.2697,3.8137,20.0,150,,6.62,0.9107,False,False,False,True
+18,1.8672,3.7953,20.0,63,,6.81,0.9082,False,False,True,False
+19,8.4939,4.2193,20.0,68,,7.01,0.9056,False,False,True,False
+20,11.1259,5.2541,30.0,72,,7.22,0.9027,True,False,False,False
+# [23:50:24] [greedy-eval @ episode 20] success_rate=80.0% over 5 episodes
+21,1.5106,4.4274,20.0,150,,8.25,0.8968,False,False,False,True
+22,-0.9885,3.6279,20.0,150,,8.69,0.8908,False,False,False,True
+23,11.2727,4.3083,30.0,97,,8.98,0.887,True,False,False,False
+24,2.0486,4.4689,30.0,150,,9.41,0.8811,False,False,False,True
+25,11.7903,4.641,30.0,85,,9.67,0.8777,True,False,False,False
+26,3.5007,5.3891,30.0,150,,10.11,0.8718,False,False,False,True
+27,6.5666,5.7188,40.0,140,,10.52,0.8662,True,False,False,False
+28,1.8127,5.7133,40.0,34,,10.62,0.8649,False,False,True,False
+29,4.9456,5.3585,40.0,150,,11.06,0.8589,False,False,False,True
+30,2.3911,4.485,30.0,150,,11.5,0.853,False,False,False,True
+31,1.0722,4.4412,30.0,150,,11.93,0.847,False,False,False,True
+32,10.171,5.5571,40.0,87,,12.19,0.8436,True,False,False,False
+33,1.7484,4.6047,30.0,15,,12.24,0.843,False,False,True,False
+34,6.3427,5.0341,30.0,97,,12.52,0.8392,False,False,True,False
+35,11.1183,4.9669,30.0,82,,12.77,0.8359,True,False,False,False
+36,5.0086,5.1177,30.0,150,,13.2,0.83,False,False,False,True
+37,0.1695,4.478,20.0,16,,13.25,0.8294,False,False,True,False
+38,1.3582,4.4326,20.0,10,,13.29,0.829,False,False,True,False
+39,9.4805,4.886,30.0,77,,13.52,0.8259,True,False,False,False
+40,10.0114,5.6481,40.0,117,,13.86,0.8213,True,False,False,False
+# [23:56:52] [greedy-eval @ episode 40] success_rate=100.0% over 5 episodes
+41,-0.4723,5.4936,40.0,7,,14.31,0.821,False,False,True,False
+42,2.4349,4.72,30.0,32,,14.4,0.8197,False,False,True,False
+43,6.6217,5.2073,30.0,62,,14.59,0.8173,False,False,True,False
+44,4.3406,5.0071,30.0,150,,15.03,0.8113,False,False,False,True
+45,2.6826,4.1636,20.0,38,,15.14,0.8098,False,False,True,False
+46,4.0461,4.0673,20.0,150,,15.58,0.8039,False,False,False,True
+47,10.8793,5.1383,30.0,108,,15.9,0.7996,True,False,False,False
+48,1.5656,5.159,30.0,150,,16.33,0.7937,False,False,False,True
+49,6.6843,4.8794,20.0,121,,16.69,0.7889,False,False,True,False
+50,4.9162,4.3699,10.0,46,,16.83,0.7871,False,False,True,False
+51,4.7275,4.8899,10.0,34,,16.93,0.7857,False,False,True,False
+52,-0.0947,4.6369,10.0,150,,17.37,0.7798,False,False,False,True
+53,6.2506,4.5998,10.0,150,,17.81,0.7739,False,False,False,True
+54,1.0537,4.2711,10.0,16,,17.86,0.7732,False,False,True,False
+55,4.9805,4.5009,10.0,57,,18.03,0.771,False,False,True,False
+56,2.7224,4.3686,10.0,14,,18.08,0.7704,False,False,True,False
+57,3.4813,3.6288,0.0,32,,18.18,0.7692,False,False,True,False
+58,9.4261,4.4148,10.0,125,,18.54,0.7642,True,False,False,False
+59,1.5602,3.9024,10.0,150,,18.98,0.7583,False,False,False,True
+60,3.9752,3.8083,10.0,150,,19.42,0.7523,False,False,False,True
+# [00:02:37] [greedy-eval @ episode 60] success_rate=100.0% over 5 episodes
+61,5.5923,3.8948,10.0,150,,20.47,0.7464,False,False,False,True
+62,0.559,3.9601,10.0,150,,20.91,0.7405,False,False,False,True
+63,-8.5729,2.4778,10.0,12,,20.95,0.74,False,True,True,False
+64,4.0047,2.7729,10.0,150,,21.39,0.734,False,False,False,True
+65,9.003,3.1751,10.0,38,,21.5,0.7325,False,False,True,False
+66,12.6238,4.1653,10.0,52,,21.66,0.7305,False,False,True,False
+67,4.7919,4.2963,10.0,54,,21.82,0.7283,False,False,True,False
+68,-3.8767,2.9661,0.0,150,,22.25,0.7224,False,False,False,True
+69,6.6639,3.4764,0.0,150,,22.7,0.7165,False,False,False,True
+70,2.4797,3.3269,0.0,150,,23.14,0.7105,False,False,False,True
+71,11.7972,3.9474,10.0,97,,23.42,0.7067,True,False,False,False
+72,6.0404,4.4955,10.0,150,,23.86,0.7007,False,False,False,True
+73,5.0224,5.855,10.0,150,,24.3,0.6948,False,False,False,True
+74,-0.4673,5.4078,10.0,150,,24.74,0.6889,False,False,False,True
+75,8.6007,5.3676,20.0,117,,25.09,0.6842,True,False,False,False
+76,2.7026,4.3755,20.0,150,,25.53,0.6783,False,False,False,True
+77,2.0518,4.1015,20.0,70,,25.73,0.6755,False,False,True,False
+78,5.5675,5.0459,20.0,150,,26.17,0.6696,False,False,False,True
+79,6.3387,5.0134,20.0,81,,26.41,0.6664,False,False,True,False
+80,0.8233,4.8477,20.0,150,,26.86,0.6605,False,False,False,True
+# [00:09:56] [greedy-eval @ episode 80] success_rate=100.0% over 5 episodes
+81,8.211,4.4891,20.0,107,,27.66,0.6562,True,False,False,False
+82,2.1493,4.1,20.0,22,,27.73,0.6553,False,False,True,False
+83,-0.2227,3.5755,20.0,12,,27.77,0.6549,False,False,True,False
+84,10.0944,4.6317,30.0,116,,28.11,0.6503,True,False,False,False
+85,7.4673,4.5183,30.0,110,,28.43,0.6459,True,False,False,False
+86,-9.9152,3.2565,30.0,150,,29.24,0.64,False,False,False,True
+87,-12.3491,1.8164,30.0,150,,30.08,0.6341,False,False,False,True
+88,-2.4971,1.01,30.0,30,,30.26,0.6329,False,False,True,False
+89,-8.8829,-0.5122,30.0,108,,30.87,0.6286,False,False,True,False
+90,-11.4099,-1.7355,30.0,150,,31.72,0.6227,False,False,False,True
+91,-1.9969,-2.7563,20.0,33,,31.92,0.6213,False,False,True,False
+92,-12.2013,-4.1913,20.0,150,,32.76,0.6154,False,False,False,True
+93,-10.8952,-5.2586,20.0,150,,33.61,0.6095,False,False,False,True
+94,-12.1821,-7.4862,10.0,150,,34.45,0.6035,False,False,False,True
+95,-13.3368,-9.5666,0.0,150,,35.3,0.5976,False,False,False,True
+96,-12.2909,-9.8042,0.0,150,,36.15,0.5917,False,False,False,True
+97,-10.8909,-9.6584,0.0,150,,36.99,0.5857,False,False,False,True
+98,-2.5939,-9.6681,0.0,35,,37.2,0.5843,False,False,True,False
+99,-9.4738,-9.7272,0.0,117,,37.86,0.5797,False,False,True,False
+100,-11.2868,-9.7148,0.0,150,,38.71,0.5738,False,False,False,True
+# [00:25:32] [greedy-eval @ episode 100] success_rate=0.0% over 5 episodes
+101,-1.9823,-9.7134,0.0,20,,43.06,0.573,False,False,True,False
+102,-11.4742,-9.6407,0.0,150,,43.91,0.567,False,False,False,True
+103,-0.9698,-8.6481,0.0,14,,44.0,0.5665,False,False,True,False
+104,-10.3466,-8.4646,0.0,150,,44.85,0.5605,False,False,False,True
+105,-10.2074,-8.1517,0.0,150,,45.69,0.5546,False,False,False,True
+106,-2.753,-7.1979,0.0,33,,45.89,0.5533,False,False,True,False
+107,-8.3061,-6.9394,0.0,111,,46.51,0.5489,False,False,True,False
+108,-10.6425,-7.7443,0.0,150,,47.36,0.543,False,False,False,True
+109,-0.808,-6.8777,0.0,8,,47.42,0.5427,False,False,True,False
+110,-12.5547,-7.0045,0.0,150,,48.26,0.5367,False,False,False,True
+111,-4.6865,-7.2749,0.0,65,,48.64,0.5341,False,False,True,False
+112,-1.6239,-6.2899,0.0,15,,48.74,0.5335,False,False,True,False
+113,-1.2703,-6.3199,0.0,15,,48.83,0.533,False,False,True,False
+114,-11.4471,-6.43,0.0,150,,49.68,0.527,False,False,False,True
+115,-11.4128,-6.5505,0.0,150,,50.53,0.5211,False,False,False,True
+116,-0.9416,-6.3694,0.0,15,,50.62,0.5205,False,False,True,False
+117,-7.0051,-6.2393,0.0,81,,51.08,0.5173,False,False,True,False
+118,-11.2684,-6.3018,0.0,150,,51.9,0.5113,False,False,False,True
+119,-0.0743,-6.2285,0.0,150,,52.34,0.5054,False,False,False,True
+120,-0.8493,-5.0579,0.0,150,,52.78,0.4995,False,False,False,True
+# [00:35:55] [greedy-eval @ episode 120] success_rate=100.0% over 5 episodes
+121,-3.6285,-4.9521,0.0,150,,53.77,0.4935,False,False,False,True
+122,4.9749,-4.2923,0.0,69,,53.97,0.4908,False,False,True,False
+123,8.155,-3.3497,10.0,123,,54.33,0.4859,True,False,False,False
+124,4.3436,-1.7706,10.0,150,,54.77,0.48,False,False,False,True
+125,2.0304,-0.4263,10.0,150,,55.21,0.4741,False,False,False,True
+126,3.7805,0.0459,10.0,150,,55.65,0.4681,False,False,False,True
+127,2.7881,1.0252,10.0,75,,55.88,0.4652,False,False,True,False
+128,12.4826,3.4003,20.0,93,,56.15,0.4615,True,False,False,False
+129,4.1241,3.8201,20.0,39,,56.27,0.4599,False,False,True,False
+130,1.0106,4.0061,20.0,150,,56.71,0.454,False,False,False,True
+131,-2.0759,4.1614,20.0,150,,57.15,0.4481,False,False,False,True
+132,-3.9772,3.2662,20.0,13,,57.19,0.4475,False,False,True,False
+133,-1.5403,2.2966,10.0,150,,57.63,0.4416,False,False,False,True
+134,-1.8936,1.6729,10.0,7,,57.66,0.4413,False,False,True,False
+135,-8.7856,0.5913,10.0,150,,58.1,0.4354,False,False,False,True
+136,6.6091,0.8742,10.0,150,,58.54,0.4294,False,False,False,True
+137,0.8507,0.6804,10.0,9,,58.57,0.4291,False,False,True,False
+138,4.5399,-0.1138,0.0,150,,59.01,0.4232,False,False,False,True
+139,-4.2895,-0.9552,0.0,150,,59.61,0.4172,False,False,False,True
+140,-11.2743,-2.1837,0.0,150,,60.45,0.4113,False,False,False,True
+# [00:47:16] [greedy-eval @ episode 140] success_rate=0.0% over 5 episodes
+141,-7.7386,-2.7499,0.0,120,,65.37,0.4065,False,False,True,False
+142,-7.6882,-3.121,0.0,95,,65.91,0.4028,False,False,True,False
+143,-10.5394,-4.021,0.0,150,,66.75,0.3968,False,False,False,True
+144,-11.0295,-4.9345,0.0,150,,67.6,0.3909,False,False,False,True
+145,-0.7931,-4.1353,0.0,10,,67.67,0.3905,False,False,True,False
+146,-8.5396,-5.6502,0.0,111,,68.3,0.3861,False,False,True,False
+147,-0.925,-5.8277,0.0,9,,68.36,0.3857,False,False,True,False
+148,-4.297,-6.7114,0.0,65,,68.73,0.3832,False,False,True,False
+149,-9.3884,-7.2213,0.0,150,,69.58,0.3772,False,False,False,True
+150,-7.0308,-6.797,0.0,87,,70.07,0.3738,False,False,True,False
+151,-5.9329,-6.6164,0.0,73,,70.49,0.3709,False,False,True,False
+152,-11.086,-6.9562,0.0,150,,71.34,0.365,False,False,False,True
+153,-11.1412,-7.0163,0.0,150,,72.18,0.359,False,False,False,True
+154,-4.7688,-6.3903,0.0,60,,72.53,0.3567,False,False,True,False
+155,-1.7647,-6.4874,0.0,22,,72.66,0.3558,False,False,True,False
+156,-1.2686,-5.7603,0.0,12,,72.74,0.3553,False,False,True,False
+157,-2.6132,-5.9292,0.0,33,,72.94,0.354,False,False,True,False
+158,-9.2812,-6.4276,0.0,120,,73.62,0.3492,False,False,True,False
+159,-2.0828,-5.697,0.0,27,,73.78,0.3482,False,False,True,False
+160,-2.8678,-5.2807,0.0,32,,73.97,0.3469,False,False,True,False
+# [01:00:47] [greedy-eval @ episode 160] success_rate=0.0% over 5 episodes
+161,-10.805,-5.7679,0.0,150,,79.05,0.341,False,False,False,True
+162,-11.2201,-5.7813,0.0,150,,79.89,0.335,False,False,False,True
+163,-10.9071,-5.7579,0.0,150,,80.74,0.3291,False,False,False,True
+164,-10.5531,-6.3364,0.0,150,,81.59,0.3232,False,False,False,True
+165,-1.8903,-6.3489,0.0,19,,81.7,0.3224,False,False,True,False
+166,-9.9618,-7.2182,0.0,150,,82.56,0.3165,False,False,False,True
+167,-10.7905,-8.036,0.0,150,,83.4,0.3105,False,False,False,True
+168,-11.124,-8.2203,0.0,150,,84.25,0.3046,False,False,False,True
+169,-1.2772,-8.1397,0.0,19,,84.37,0.3038,False,False,True,False
+170,-10.0971,-8.8626,0.0,150,,85.21,0.2979,False,False,False,True
+171,-10.2742,-8.8095,0.0,150,,86.06,0.292,False,False,False,True
+172,-5.9051,-8.278,0.0,71,,86.47,0.2892,False,False,True,False
+173,-8.0943,-7.9968,0.0,111,,87.1,0.2848,False,False,True,False
+174,-12.0802,-8.1495,0.0,150,,87.94,0.2788,False,False,False,True
+175,-10.3617,-8.9966,0.0,150,,88.79,0.2729,False,False,False,True
+176,-11.1181,-9.1122,0.0,150,,89.64,0.267,False,False,False,True
+177,-7.0126,-8.7344,0.0,92,,90.16,0.2633,False,False,True,False
+178,-10.483,-8.6703,0.0,150,,91.01,0.2574,False,False,False,True
+179,-11.287,-9.6713,0.0,150,,91.85,0.2514,False,False,False,True
+180,-10.2945,-9.6911,0.0,150,,92.7,0.2455,False,False,False,True
+# [01:19:31] [greedy-eval @ episode 180] success_rate=0.0% over 5 episodes
+181,-11.8871,-9.8523,0.0,150,,97.78,0.2396,False,False,False,True
+182,-11.4968,-10.4115,0.0,150,,98.62,0.2336,False,False,False,True
+183,-7.3545,-10.3375,0.0,108,,99.24,0.2294,False,False,True,False
+184,-12.0416,-10.3337,0.0,150,,100.08,0.2234,False,False,False,True
+185,-11.1238,-10.4099,0.0,150,,100.93,0.2175,False,False,False,True
+186,-11.2958,-10.4277,0.0,150,,101.78,0.2115,False,False,False,True
+187,-10.3439,-10.7608,0.0,150,,102.62,0.2056,False,False,False,True
+188,-11.0465,-10.8171,0.0,150,,103.47,0.1997,False,False,False,True
+189,-7.226,-10.4111,0.0,89,,103.98,0.1961,False,False,True,False
+190,-11.0136,-10.483,0.0,150,,104.82,0.1902,False,False,False,True
+191,-4.2598,-9.7202,0.0,61,,105.18,0.1878,False,False,True,False
+192,-11.2754,-9.6981,0.0,150,,106.03,0.1819,False,False,False,True
+193,-9.7858,-9.9412,0.0,131,,106.77,0.1767,False,False,True,False
+194,-10.0249,-9.7396,0.0,150,,107.61,0.1707,False,False,False,True
+195,-11.3027,-9.7575,0.0,150,,108.46,0.1648,False,False,False,True
+196,-11.0226,-9.7301,0.0,150,,109.31,0.1589,False,False,False,True
+197,-10.7574,-9.7715,0.0,150,,110.15,0.1529,False,False,False,True
+198,-9.8926,-9.6561,0.0,150,,111.0,0.147,False,False,False,True
+199,-10.0216,-9.9356,0.0,150,,111.84,0.141,False,False,False,True
+200,-0.887,-8.923,0.0,10,,111.91,0.1406,False,False,True,False
+# [01:37:48] [greedy-eval @ episode 200] success_rate=0.0% over 5 episodes
+# [01:37:48] Training complete. 200 episodes in 115.2 min. Final avg reward (last 10): -8.92. Final success rate (last 10): 0.0%.

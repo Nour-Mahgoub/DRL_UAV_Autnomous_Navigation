@@ -1,0 +1,223 @@
+# run_name: d3qn_random_start_goal_nodepth_200
+# timestamp: 20260810_221150
+# ---- config ----
+# goal_position: (20, 0, -3)
+# start_position: (0, 0, -3)
+# max_episode_steps: 150
+# dt: 0.5
+# speed: 2.0
+# state_dim: 15
+# action_dim: 27
+# lr: 0.0001
+# gamma: 0.99
+# buffer_capacity: 1000000
+# batch_size: 32
+# epsilon_start: 1.0
+# epsilon_end: 0.2
+# epsilon_decay_steps: 24000
+# target_update_freq: 250
+# use_double: True
+# use_dueling: True
+# ----------------
+episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,is_success,is_crash,is_out_of_bounds,is_timeout
+1,-2.4445,-2.4445,0.0,12,1.0,0.06,False,False,True,False
+2,-17.4056,-9.9251,0.0,150,0.9956,0.49,False,False,False,True
+3,-0.8255,-6.8919,0.0,12,0.9952,0.53,False,False,True,False
+4,-15.3931,-9.0172,0.0,150,0.9902,0.97,False,False,False,True
+5,-13.3162,-9.877,0.0,150,0.9852,1.4,False,False,False,True
+6,-8.39,-9.6292,0.0,150,0.9802,1.84,False,False,False,True
+7,-18.049,-10.832,0.0,150,0.9752,2.27,False,False,False,True
+8,-1.9895,-9.7267,0.0,87,0.9723,2.52,False,False,True,False
+9,-3.4429,-9.0285,0.0,150,0.9673,2.96,False,False,False,True
+10,-23.2661,-10.4523,0.0,150,0.9623,3.39,False,False,False,True
+11,0.6205,-10.1458,0.0,12,0.9619,3.43,False,False,True,False
+12,-16.7298,-10.0782,0.0,150,0.9569,3.86,False,False,False,True
+13,-14.3054,-11.4262,0.0,150,0.9519,4.3,False,False,False,True
+14,-22.1704,-12.1039,0.0,150,0.9469,4.73,False,False,False,True
+15,-5.473,-11.3196,0.0,52,0.9452,4.89,False,False,True,False
+16,-9.2002,-11.4006,0.0,150,0.9402,5.32,False,False,False,True
+17,-12.3403,-10.8297,0.0,150,0.9352,5.76,False,False,False,True
+18,-13.4438,-11.9751,0.0,150,0.9302,6.19,False,False,False,True
+19,-1.1564,-11.7465,0.0,9,0.9299,6.22,False,False,True,False
+20,-18.3986,-11.2597,0.0,150,0.9249,6.66,False,False,False,True
+21,-12.2055,-12.5423,0.0,150,0.9199,7.09,False,False,False,True
+22,-19.3287,-12.8022,0.0,150,0.9149,7.53,False,False,False,True
+23,-7.4522,-12.1169,0.0,150,0.9099,7.97,False,False,False,True
+24,-10.9325,-10.9931,0.0,150,0.9049,8.4,False,False,False,True
+25,-4.9135,-10.9372,0.0,150,0.8999,8.84,False,False,False,True
+26,-17.588,-11.776,0.0,150,0.8949,9.27,False,False,False,True
+27,-8.2525,-11.3672,0.0,150,0.8899,9.71,False,False,False,True
+28,-6.7851,-10.7013,0.0,150,0.8849,10.14,False,False,False,True
+29,-8.7737,-11.463,0.0,150,0.8799,10.58,False,False,False,True
+30,-8.6154,-10.4847,0.0,150,0.8749,11.01,False,False,False,True
+31,0.6024,-9.2039,0.0,150,0.8699,11.45,False,False,False,True
+32,0.5985,-7.2112,0.0,150,0.8649,11.89,False,False,False,True
+33,1.1344,-6.3525,0.0,150,0.8599,12.32,False,False,False,True
+34,-1.0088,-5.3602,0.0,150,0.8549,12.76,False,False,False,True
+35,-7.7793,-5.6468,0.0,150,0.8499,13.2,False,False,False,True
+36,-0.6132,-3.9493,0.0,150,0.8449,13.64,False,False,False,True
+37,3.8967,-2.7344,10.0,146,0.84,14.06,True,False,False,False
+38,-5.9966,-2.6555,10.0,150,0.835,14.5,False,False,False,True
+39,-6.0472,-2.3828,10.0,150,0.83,14.93,False,False,False,True
+40,-4.4846,-1.9698,10.0,150,0.825,15.37,False,False,False,True
+41,-1.4634,-2.1763,10.0,150,0.82,15.81,False,False,False,True
+42,1.6782,-2.0684,10.0,150,0.815,16.25,False,False,False,True
+43,4.6224,-1.7196,20.0,145,0.8102,16.67,True,False,False,False
+44,10.7681,-0.5419,30.0,96,0.807,16.95,True,False,False,False
+45,-2.3233,0.0037,30.0,150,0.802,17.39,False,False,False,True
+46,-4.2909,-0.3641,30.0,141,0.7973,17.8,False,False,True,False
+47,7.6728,0.0136,30.0,109,0.7937,18.12,True,False,False,False
+48,3.6781,0.981,30.0,150,0.7887,18.56,False,False,False,True
+49,-7.6859,0.8171,30.0,150,0.7837,19.0,False,False,False,True
+50,3.9094,1.6565,30.0,150,0.7787,19.44,False,False,False,True
+51,-6.541,1.1488,30.0,150,0.7737,19.87,False,False,False,True
+52,-1.0127,0.8797,30.0,150,0.7687,20.31,False,False,False,True
+53,2.258,0.6433,20.0,150,0.7637,20.75,False,False,False,True
+54,2.7238,-0.1612,10.0,150,0.7587,21.19,False,False,False,True
+55,8.0541,0.8766,20.0,141,0.754,21.61,True,False,False,False
+56,9.7778,2.2834,30.0,117,0.7501,21.96,True,False,False,False
+57,4.1369,1.9298,20.0,150,0.7451,22.4,False,False,False,True
+58,7.9239,2.3544,30.0,118,0.7411,22.75,True,False,False,False
+59,10.5086,4.1739,40.0,118,0.7372,23.09,True,False,False,False
+60,9.9733,4.7803,50.0,93,0.7341,23.37,True,False,False,False
+61,10.6937,6.5037,60.0,105,0.7306,23.68,True,False,False,False
+62,5.4232,7.1473,60.0,150,0.7256,24.12,False,False,False,True
+63,4.4164,7.3632,60.0,150,0.7206,24.56,False,False,False,True
+64,2.0642,7.2972,60.0,150,0.7156,24.99,False,False,False,True
+65,7.0458,7.1964,60.0,142,0.7109,25.41,True,False,False,False
+66,7.4187,6.9605,60.0,122,0.7068,25.77,True,False,False,False
+67,10.9407,7.6409,70.0,85,0.704,26.02,True,False,False,False
+68,7.1821,7.5667,60.0,150,0.699,26.46,False,False,False,True
+69,5.9862,7.1144,50.0,150,0.694,26.89,False,False,False,True
+70,8.5489,6.972,50.0,108,0.6904,27.21,True,False,False,False
+71,-0.27,5.8756,40.0,150,0.6854,27.65,False,False,False,True
+72,7.6825,6.1016,50.0,101,0.682,27.95,True,False,False,False
+73,11.1829,6.7782,60.0,93,0.6789,28.23,True,False,False,False
+74,8.5464,7.4264,70.0,104,0.6754,28.53,True,False,False,False
+75,12.1834,7.9402,70.0,92,0.6724,28.81,True,False,False,False
+76,3.8449,7.5828,60.0,150,0.6674,29.25,False,False,False,True
+77,10.7012,7.5589,60.0,61,0.6653,29.43,True,False,False,False
+78,4.5159,7.2922,60.0,150,0.6603,29.87,False,False,False,True
+79,8.2137,7.515,70.0,104,0.6569,30.17,True,False,False,False
+80,9.9126,7.6514,70.0,86,0.654,30.43,True,False,False,False
+81,11.4383,8.8222,80.0,78,0.6514,30.66,True,False,False,False
+82,5.8716,8.6411,70.0,150,0.6464,31.09,False,False,False,True
+83,7.142,8.237,60.0,150,0.6414,31.53,False,False,False,True
+84,3.2765,7.71,50.0,150,0.6364,31.97,False,False,False,True
+85,12.2499,7.7167,50.0,82,0.6337,32.21,True,False,False,False
+86,7.5918,8.0913,50.0,150,0.6287,32.65,False,False,False,True
+87,10.7738,8.0986,50.0,93,0.6256,32.92,True,False,False,False
+88,12.7093,8.9179,60.0,108,0.622,33.24,True,False,False,False
+89,1.6482,8.2614,50.0,150,0.617,33.68,False,False,False,True
+90,12.6432,8.5345,50.0,60,0.615,33.86,True,False,False,False
+91,10.3966,8.4303,50.0,69,0.6127,34.06,True,False,False,False
+92,2.7092,8.114,50.0,150,0.6077,34.51,False,False,False,True
+93,10.6742,8.4673,60.0,125,0.6035,34.87,True,False,False,False
+94,5.9263,8.7322,60.0,150,0.5985,35.32,False,False,False,True
+95,10.4647,8.5537,60.0,123,0.5944,35.68,True,False,False,False
+96,11.0535,8.8999,70.0,100,0.5911,35.97,True,False,False,False
+97,10.4885,8.8714,70.0,80,0.5884,36.21,True,False,False,False
+98,4.5178,8.0522,60.0,150,0.5834,36.64,False,False,False,True
+99,10.94,8.9814,70.0,70,0.5811,36.85,True,False,False,False
+100,7.6373,8.4808,60.0,150,0.5761,37.29,False,False,False,True
+101,9.4271,8.3839,60.0,104,0.5726,37.6,True,False,False,False
+102,5.3025,8.6432,60.0,150,0.5676,38.04,False,False,False,True
+103,9.0072,8.4765,60.0,83,0.5648,38.28,True,False,False,False
+104,4.2891,8.3128,60.0,150,0.5598,38.72,False,False,False,True
+105,8.1982,8.0861,60.0,121,0.5558,39.07,True,False,False,False
+106,11.5903,8.1398,60.0,70,0.5535,39.28,True,False,False,False
+107,5.7637,7.6673,60.0,147,0.5486,39.71,True,False,False,False
+108,11.3971,8.3553,70.0,69,0.5463,39.92,True,False,False,False
+109,3.0242,7.5637,60.0,150,0.5413,40.36,False,False,False,True
+110,11.914,7.9914,70.0,78,0.5387,40.59,True,False,False,False
+111,6.9398,7.7426,60.0,88,0.5357,40.85,False,False,True,False
+112,10.618,8.2742,70.0,97,0.5325,41.13,True,False,False,False
+113,10.4558,8.419,70.0,75,0.53,41.36,True,False,False,False
+114,7.8578,8.7759,70.0,71,0.5276,41.57,False,False,True,False
+115,13.3121,9.2873,70.0,79,0.525,41.8,True,False,False,False
+116,11.7561,9.3039,70.0,82,0.5223,42.05,True,False,False,False
+117,2.9657,9.0241,60.0,150,0.5173,42.48,False,False,False,True
+118,14.0334,9.2877,60.0,64,0.5151,42.67,True,False,False,False
+119,8.1732,9.8026,60.0,97,0.5119,42.96,False,False,True,False
+120,13.6973,9.9809,60.0,73,0.5095,43.18,True,False,False,False
+121,13.9825,10.6852,70.0,80,0.5068,43.41,True,False,False,False
+122,12.7204,10.8954,70.0,86,0.5039,43.67,True,False,False,False
+123,12.5399,11.1038,70.0,90,0.5009,43.93,True,False,False,False
+124,9.1137,11.2294,70.0,50,0.4993,44.08,False,False,True,False
+125,-1.8082,9.7174,60.0,150,0.4943,44.52,False,False,False,True
+126,3.3968,8.8815,50.0,150,0.4893,44.96,False,False,False,True
+127,10.6873,9.6536,50.0,47,0.4877,45.1,False,False,True,False
+128,3.8571,8.636,40.0,150,0.4827,45.54,False,False,False,True
+129,4.8273,8.3014,40.0,150,0.4777,45.98,False,False,False,True
+130,11.0869,8.0404,40.0,85,0.4749,46.23,True,False,False,False
+131,14.8063,8.1227,40.0,71,0.4725,46.44,True,False,False,False
+132,11.9836,8.0491,40.0,51,0.4708,46.6,True,False,False,False
+133,12.7714,8.0722,40.0,109,0.4672,46.92,True,False,False,False
+134,13.3794,8.4988,50.0,81,0.4645,47.16,True,False,False,False
+135,13.819,10.0615,60.0,74,0.462,47.38,True,False,False,False
+136,10.186,10.7404,70.0,91,0.459,47.65,True,False,False,False
+137,14.6477,11.1365,80.0,73,0.4565,47.87,True,False,False,False
+138,14.1329,12.164,90.0,82,0.4538,48.11,True,False,False,False
+139,16.2322,13.3045,100.0,63,0.4517,48.3,True,False,False,False
+140,15.3776,13.7336,100.0,59,0.4497,48.48,True,False,False,False
+141,12.3209,13.4851,100.0,86,0.4469,48.73,True,False,False,False
+142,12.6667,13.5534,100.0,64,0.4447,48.92,True,False,False,False
+143,11.4858,13.4248,100.0,67,0.4425,49.12,True,False,False,False
+144,8.0733,12.8942,100.0,114,0.4387,49.46,True,False,False,False
+145,2.1714,11.7295,90.0,75,0.4362,49.68,False,False,True,False
+146,6.414,11.3523,80.0,150,0.4312,50.12,False,False,False,True
+147,14.8114,11.3686,80.0,73,0.4288,50.34,True,False,False,False
+148,11.8843,11.1438,80.0,92,0.4257,50.61,True,False,False,False
+149,12.7719,10.7977,80.0,67,0.4235,50.81,True,False,False,False
+150,5.1984,9.7798,70.0,150,0.4185,51.25,False,False,False,True
+151,1.2954,8.6773,60.0,150,0.4135,51.69,False,False,False,True
+152,13.6319,8.7738,60.0,71,0.4111,51.9,True,False,False,False
+153,1.2917,7.7544,50.0,9,0.4108,51.93,False,False,True,False
+154,1.047,7.0517,40.0,9,0.4105,51.96,False,False,True,False
+155,12.6363,8.0982,50.0,64,0.4084,52.15,True,False,False,False
+156,14.5936,8.9162,60.0,68,0.4061,52.35,True,False,False,False
+157,12.3363,8.6687,60.0,59,0.4041,52.53,True,False,False,False
+158,11.072,8.5875,60.0,103,0.4007,52.84,True,False,False,False
+159,14.5947,8.7697,60.0,99,0.3974,53.13,True,False,False,False
+160,13.4232,9.5922,70.0,81,0.3947,53.37,True,False,False,False
+161,13.4622,10.8089,80.0,90,0.3917,53.63,True,False,False,False
+162,11.7186,10.6176,80.0,51,0.39,53.79,True,False,False,False
+163,11.6776,11.6561,90.0,80,0.3873,54.02,True,False,False,False
+164,13.8271,12.9342,100.0,74,0.3849,54.24,True,False,False,False
+165,6.8485,12.3554,90.0,150,0.3799,54.68,False,False,False,True
+166,12.8359,12.1796,90.0,95,0.3767,54.96,True,False,False,False
+167,9.5229,11.8983,90.0,135,0.3722,55.35,True,False,False,False
+168,12.6578,12.0568,90.0,92,0.3691,55.63,True,False,False,False
+169,12.6396,11.8613,90.0,49,0.3675,55.77,True,False,False,False
+170,12.1811,11.7371,90.0,86,0.3646,56.03,True,False,False,False
+171,13.473,11.7382,90.0,77,0.3621,56.26,True,False,False,False
+172,5.1709,11.0834,80.0,150,0.3571,56.69,False,False,False,True
+173,13.5719,11.2729,80.0,57,0.3552,56.87,True,False,False,False
+174,8.4066,10.7308,70.0,150,0.3502,57.31,False,False,False,True
+175,10.0388,11.0498,80.0,82,0.3474,57.55,True,False,False,False
+176,12.2204,10.9883,80.0,64,0.3453,57.74,True,False,False,False
+177,12.1788,11.2539,80.0,90,0.3423,58.01,True,False,False,False
+178,11.2257,11.1107,80.0,96,0.3391,58.3,True,False,False,False
+179,13.3521,11.1819,80.0,59,0.3371,58.47,True,False,False,False
+180,12.4428,11.2081,80.0,61,0.3351,58.65,True,False,False,False
+181,-1.5295,9.7078,70.0,11,0.3347,58.69,False,False,True,False
+182,13.0504,10.4958,80.0,62,0.3327,58.88,True,False,False,False
+183,14.664,10.605,80.0,42,0.3313,59.0,True,False,False,False
+184,11.9972,10.9641,90.0,123,0.3272,59.37,True,False,False,False
+185,17.1636,11.6765,90.0,64,0.325,59.56,True,False,False,False
+186,9.6426,11.4188,90.0,128,0.3208,59.93,True,False,False,False
+187,4.9713,10.698,80.0,150,0.3158,60.37,False,False,False,True
+188,14.7645,11.0519,80.0,35,0.3146,60.48,True,False,False,False
+189,13.024,11.0191,80.0,41,0.3132,60.61,True,False,False,False
+190,13.6982,11.1446,80.0,40,0.3119,60.73,True,False,False,False
+191,4.8316,11.7807,80.0,150,0.3069,61.17,False,False,False,True
+192,6.6396,11.1397,70.0,150,0.3019,61.61,False,False,False,True
+193,14.7352,11.1468,70.0,54,0.3001,61.77,True,False,False,False
+194,13.8885,11.3359,70.0,54,0.2983,61.93,True,False,False,False
+195,11.5298,10.7725,70.0,60,0.2963,62.11,True,False,False,False
+196,13.9929,11.2076,70.0,82,0.2936,62.35,True,False,False,False
+197,11.0545,11.8159,80.0,108,0.29,62.67,True,False,False,False
+198,13.7381,11.7132,80.0,80,0.2873,62.91,True,False,False,False
+199,14.5305,11.8639,80.0,79,0.2847,63.14,True,False,False,False
+200,10.4653,11.5406,80.0,61,0.2826,63.32,True,False,False,False
+# [23:15:12] Training complete. 200 episodes in 63.3 min. Final avg reward (last 10): 11.54. Final success rate (last 10): 80.0%.
