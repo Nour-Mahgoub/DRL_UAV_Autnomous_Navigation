@@ -332,16 +332,16 @@ class AirSimEnv:
         unless you opt in.
     """
 
-    STATE_DIM = 15
+    STATE_DIM = 20
 
     def __init__(self, goal_position, start_position=(0, 0, -3),
                  max_episode_steps=300, dt=0.5, speed=2.0,
                  accept_radius=2.0, max_depth_meters=20.0,
                  workspace_bounds=None,
                  scenario_pairs=None,
-                 randomize_positions=False,
+                 randomize_positions=True,
                  start_jitter_radius=1.0,
-                 goal_jitter_radius=7.0,
+                 goal_jitter_radius=3.0,
                  max_reset_attempts=5):
         self.client = airsim.MultirotorClient()
         self.client.confirmConnection()
@@ -549,7 +549,7 @@ class AirSimEnv:
 
         obstacle_features, segmentation_features = self._get_image_features()
 
-        obs = np.concatenate([position, velocity, yaw, relative_goal,
+        obs = np.concatenate([position, velocity, yaw, relative_goal, obstacle_features, 
                                 segmentation_features])
         assert obs.shape[0] == self.STATE_DIM, f"Expected {self.STATE_DIM}-dim obs, got {obs.shape[0]}"
         return obs
