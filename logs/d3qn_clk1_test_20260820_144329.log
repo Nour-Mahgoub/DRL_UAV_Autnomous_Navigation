@@ -1,0 +1,29 @@
+# run_name: d3qn_clk1_test
+# timestamp: 20260820_144329
+# ---- config ----
+# goal_position: (20, 0, -3)
+# start_position: (0, 0, -3)
+# randomize_positions: True
+# start_jitter_radius: 1.0
+# goal_jitter_radius: 3.0
+# max_episode_steps: 150
+# dt: 0.5
+# speed: 2.0
+# state_dim: 15
+# action_dim: 27
+# lr: 0.0001
+# gamma: 0.99
+# buffer_capacity: 1000000
+# batch_size: 32
+# epsilon_start: 1.0
+# epsilon_end: 0.2
+# epsilon_decay_steps: 24000
+# target_update_freq: 250
+# use_double: True
+# use_dueling: True
+# ----------------
+episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,start_position,goal_position,is_success,is_crash,is_out_of_bounds,is_timeout
+1,-27.4201,-27.4201,0.0,150,0.996,2.32,(-0.229, 0.48, -2.468),(19.472, -1.914, -4.585),False,False,False,True
+2,0.5033,-13.4584,0.0,12,0.9956,2.57,(-0.348, -0.106, -2.584),(21.206, 0.354, -2.541),False,False,True,False
+3,-44.8482,-23.9217,0.0,149,0.9907,5.12,(0.496, -0.183, -3.105),(22.189, 1.823, -3.166),False,False,True,False
+4,-32.2763,-26.0103,0.0,150,0.9857,7.69,(0.593, -0.107, -3.117),(19.049, -0.777, -2.114),False,False,False,True

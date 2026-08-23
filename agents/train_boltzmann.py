@@ -389,7 +389,7 @@ NUM_EPISODES = 200               # budgeted for ~3 hrs at observed ~40s/episode
 SAVE_EVERY = 10                  # checkpoint frequency (episodes)
 PRINT_EVERY = 1                  # AirSim episodes are slow — print every episode, not every 10
 
-RESULTS_DIR = os.path.join(os.path.dirname(__file__), "..", "results")
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "..", "logs")
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
 EVAL_EVERY = 20        # run a greedy eval block every N training episodes

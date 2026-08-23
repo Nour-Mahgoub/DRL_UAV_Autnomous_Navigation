@@ -221,3 +221,4 @@ episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,is_success,is_cras
 199,14.5305,11.8639,80.0,79,0.2847,63.14,True,False,False,False
 200,10.4653,11.5406,80.0,61,0.2826,63.32,True,False,False,False
 # [23:15:12] Training complete. 200 episodes in 63.3 min. Final avg reward (last 10): 11.54. Final success rate (last 10): 80.0%.
+ 
