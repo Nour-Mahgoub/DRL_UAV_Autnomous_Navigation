@@ -25,13 +25,13 @@ from logger import TrainingLogger
 
 # ---------------- config ----------------
 
-GOAL_POSITION = (20, 0, -3)
+GOAL_POSITION = (50, 0, -3)
 START_POSITION = (0, 0, -3)
 MAX_EPISODE_STEPS = 150
 DT = 0.5
 SPEED = 2.0
 
-NUM_EPISODES = 150
+NUM_EPISODES = 100
 SAVE_EVERY = 10
 PRINT_EVERY = 1
 EVAL_EVERY = 20
@@ -42,7 +42,7 @@ EVAL_EPISODES = 5
 # d3qn_random_start_goal_nodepth_200 run.
 WARM_START_CHECKPOINT = os.path.join(
     os.path.dirname(__file__), "..", "results",
-    "d3qn_random_start_goal_nodepth_200_20260810_221150_ep200.pt"  # <-- verify this matches your actual saved filename
+    "d3qn_city_test_400_v1_20260823_192020_ep400.pt"  # <-- verify this matches your actual saved filename
 )
 
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "..", "results")
@@ -104,8 +104,8 @@ def main():
         gamma=0.99,
         buffer_capacity=1_000_000,
         batch_size=32,
-        epsilon_start=0.35,          # reduced — warm-started, not starting cold
-        epsilon_end=0.2,
+        epsilon_start=0.2,          # reduced — warm-started, not starting cold
+        epsilon_end=0.05,
         epsilon_decay_steps=10000,   # shorter — less ground to re-explore
         target_update_freq=250,
         use_double=True,

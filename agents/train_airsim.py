@@ -297,13 +297,13 @@ from dqn_agent import DQNAgent
 
 from logger import TrainingLogger
 
-GOAL_POSITION = (20, 0, -3)      # adjust to a real reachable point in Blocks
+GOAL_POSITION = (50, 0, -3)      # adjust to a real reachable point in Blocks
 START_POSITION = (0, 0, -3)
 MAX_EPISODE_STEPS = 150          # keep modest — AirSim steps are real-time, not instant
 DT = 0.5
 SPEED = 2.0
 
-NUM_EPISODES = 300               # budgeted for ~3 hrs at observed ~40s/episode
+NUM_EPISODES = 400               # budgeted for ~3 hrs at observed ~40s/episode
 SAVE_EVERY = 10                  # checkpoint frequency (episodes)
 PRINT_EVERY = 1                  # AirSim episodes are slow — print every episode, not every 10
 

@@ -1,0 +1,29 @@
+# run_name: t
+# timestamp: 20260823_191705
+# ---- config ----
+# goal_position: (50, 0, -3)
+# start_position: (0, 0, -3)
+# randomize_positions: True
+# start_jitter_radius: 1.0
+# goal_jitter_radius: 3.0
+# max_episode_steps: 150
+# dt: 0.5
+# speed: 2.0
+# state_dim: 15
+# action_dim: 27
+# lr: 0.0001
+# gamma: 0.99
+# buffer_capacity: 1000000
+# batch_size: 32
+# epsilon_start: 1.0
+# epsilon_end: 0.2
+# epsilon_decay_steps: 24000
+# target_update_freq: 250
+# use_double: True
+# use_dueling: True
+# ----------------
+episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,start_position,goal_position,is_success,is_crash,is_out_of_bounds,is_timeout
+1,-10.6507,-10.6507,0.0,7,1.0,0.13,(-0.201, 0.359, -2.508),(50.735, -1.229, -3.893),False,True,False,False
+2,-10.7433,-10.697,0.0,4,1.0,0.29,(0.691, 0.126, -3.04),(50.577, -1.047, -1.53),False,True,False,False
+3,-23.4254,-14.9398,0.0,150,0.9957,1.97,(-0.095, 0.107, -3.772),(51.175, 0.325, -2.758),False,False,False,True
+# [19:19:04] Training complete. 3 episodes in 2.0 min. Final avg reward (last 10): -14.94. Final success rate (last 10): 0.0%.

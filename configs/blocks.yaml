@@ -1,0 +1,29 @@
+# Config for the Blocks environment.
+# All values here match what's currently hardcoded in airsim_env.py,
+# carried over as-is — nothing new to verify, this is the known-good setup.
+
+env_name: blocks
+
+start_position: [0, 0, -3]
+goal_position: [20, 0, -3]
+
+workspace_bounds:
+  x: [-100, 100]
+  y: [-100, 100]
+  z: [-50, 0]
+
+start_jitter_radius: 1.0
+goal_jitter_radius: 3.0
+
+max_depth_meters: 20.0
+accept_radius: 2.0
+
+# maps segmentation class id -> list of regex patterns (matched against
+# actual Unreal mesh names via simSetSegmentationObjectID). Confirmed via
+# simListSceneObjects() against the Blocks map.
+segmentation_classes:
+  0: ["Ground.*"]              # traversable / background
+  1: ["Cylinder.*"]            # cylindrical obstacles
+  2: ["TemplateCube_Rounded.*"]  # cube obstacles (main obstacle field)
+  3: ["Cone.*"]                 # cone obstacle
+  4: ["OrangeBall"]             # spherical obstacle
