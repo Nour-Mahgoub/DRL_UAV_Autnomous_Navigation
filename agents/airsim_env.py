@@ -1085,7 +1085,7 @@ class AirSimEnv:
 
     STATE_DIM = 15
 
-    def __init__(self, env_name="city", configs_dir=None,
+    def __init__(self, env_name="blocks", configs_dir=None,
                  max_episode_steps=300, dt=0.5, speed=2.0,
                  scenario_pairs=None,
                  randomize_positions=True,
@@ -1206,12 +1206,58 @@ class AirSimEnv:
 
         return sampled.astype(np.float32)
 
+    # def _sample_episode_positions(self):
+    #     """
+    #     Chooses this episode's (start, goal). Priority:
+    #       1. scenario_pairs, if provided — a curated, pre-verified set.
+    #       2. randomize_positions jitter around the base pair.
+    #       3. fall back to the fixed base pair (original behavior).
+    #     """
+    #     if self.scenario_pairs:
+    #         start, goal = random.choice(self.scenario_pairs)
+    #         return np.array(start, dtype=np.float32), np.array(goal, dtype=np.float32)
+
+    #     if self.randomize_positions:
+    #         start = self._sample_jittered_position(self.base_start_position, self.start_jitter_radius)
+    #         goal = self._sample_jittered_position(self.base_goal_position, self.goal_jitter_radius)
+    #         return start, goal
+
+    #     return self.base_start_position.copy(), self.base_goal_position.copy()
+    def _sample_valid_goal(self, max_attempts=5):
+    
+        current_pose = self.client.simGetVehiclePose()  # so we can restore after probing
+
+        for attempt in range(1, max_attempts + 1):
+            candidate_goal = self._sample_jittered_position(
+                self.base_goal_position, self.goal_jitter_radius
+            )
+
+            probe_pose = airsim.Pose(
+                airsim.Vector3r(float(candidate_goal[0]), float(candidate_goal[1]), float(candidate_goal[2])),
+                current_pose.orientation,
+            )
+            self.client.simSetVehiclePose(probe_pose, ignore_collision=True)
+
+            if not self.client.simGetCollisionInfo().has_collided:
+                self.client.simSetVehiclePose(current_pose, ignore_collision=True)  # restore
+                return candidate_goal
+
+            print(f"Goal sample attempt {attempt}/{max_attempts}: "
+                f"candidate goal embedded in geometry, resampling...")
+
+        print(f"Warning: could not find a collision-free goal after "
+            f"{max_attempts} attempts; using last sampled goal anyway.")
+        self.client.simSetVehiclePose(current_pose, ignore_collision=True)  # restore
+        return candidate_goal
+
+
     def _sample_episode_positions(self):
         """
         Chooses this episode's (start, goal). Priority:
-          1. scenario_pairs, if provided — a curated, pre-verified set.
-          2. randomize_positions jitter around the base pair.
-          3. fall back to the fixed base pair (original behavior).
+        1. scenario_pairs, if provided — a curated, pre-verified set.
+        2. randomize_positions jitter around the base pair (goal validated
+            via teleport probe so jitter can't silently land inside a mesh).
+        3. fall back to the fixed base pair (original behavior).
         """
         if self.scenario_pairs:
             start, goal = random.choice(self.scenario_pairs)
@@ -1219,7 +1265,7 @@ class AirSimEnv:
 
         if self.randomize_positions:
             start = self._sample_jittered_position(self.base_start_position, self.start_jitter_radius)
-            goal = self._sample_jittered_position(self.base_goal_position, self.goal_jitter_radius)
+            goal = self._sample_valid_goal(max_attempts=self.max_reset_attempts)
             return start, goal
 
         return self.base_start_position.copy(), self.base_goal_position.copy()
@@ -1291,6 +1337,9 @@ class AirSimEnv:
         collided = self.client.simGetCollisionInfo().has_collided
         reached_goal = curr_dist < self.accept_radius
 
+        curr_pos= self.client.simGetVehiclePose().position
+        position= (curr_pos.x_val,curr_pos.y_val,curr_pos.z_val)
+
         reward = compute_reward(
             prev_dist=self.prev_dist,
             curr_dist=curr_dist,
@@ -1313,6 +1362,7 @@ class AirSimEnv:
             "is_timeout": timed_out,
             "step_num": self.step_num,
             "dist_to_goal": curr_dist,
+            "position" : position,
         }
 
         obs = self._get_observation()

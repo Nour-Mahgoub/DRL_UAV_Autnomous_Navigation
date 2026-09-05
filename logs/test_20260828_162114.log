@@ -1,0 +1,29 @@
+# run_name: test
+# timestamp: 20260828_162114
+# ---- config ----
+# goal_position: (50, 0, -3)
+# start_position: (0, 0, -3)
+# randomize_positions: True
+# start_jitter_radius: 1.0
+# goal_jitter_radius: 3.0
+# max_episode_steps: 150
+# dt: 0.5
+# speed: 2.0
+# state_dim: 15
+# action_dim: 27
+# lr: 0.0001
+# gamma: 0.99
+# buffer_capacity: 1000000
+# batch_size: 32
+# epsilon_start: 1.0
+# epsilon_end: 0.2
+# epsilon_decay_steps: 24000
+# target_update_freq: 250
+# use_double: True
+# use_dueling: True
+# ----------------
+episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,start_position,goal_position,is_success,is_crash,is_out_of_bounds,is_timeout
+1,-14.7141,-14.7141,0.0,46,0.9995,0.14,(0.144, -0.261, -2.668),(51.941, -0.356, -2.834),False,False,True,False
+2,-0.5051,-7.6096,0.0,4,0.9994,0.15,(0.161, -0.624, -2.323),(50.509, 1.107, -5.236),False,False,True,False
+3,0.7491,-4.8234,0.0,6,0.9992,0.17,(0.693, 0.36, -3.369),(48.095, 0.277, -1.853),False,False,True,False
+4,-0.4772,-3.7368,0.0,6,0.999,0.22,(0.846, -0.183, -2.973),(49.045, -0.194, -1.0),False,False,True,False

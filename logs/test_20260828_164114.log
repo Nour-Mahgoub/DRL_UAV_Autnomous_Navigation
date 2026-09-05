@@ -1,7 +1,7 @@
-# run_name: d3qn_afterfixingframes_testrun50
-# timestamp: 20260820_191430
+# run_name: test
+# timestamp: 20260828_164114
 # ---- config ----
-# goal_position: (20, 0, -3)
+# goal_position: (50, 0, -3)
 # start_position: (0, 0, -3)
 # randomize_positions: True
 # start_jitter_radius: 1.0
@@ -22,3 +22,5 @@
 # use_double: True
 # use_dueling: True
 # ----------------
+episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,start_position,goal_position,is_success,is_crash,is_out_of_bounds,is_timeout
+1,-30.5734,-30.5734,0.0,150,0.996,1.09,(0.429, 0.407, -3.084),(49.836, -1.041, -5.028),False,False,False,True

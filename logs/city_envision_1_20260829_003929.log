@@ -1,0 +1,30 @@
+# run_name: city_envision_1
+# timestamp: 20260829_003929
+# ---- config ----
+# goal_position: (50, 0, -3)
+# start_position: (0, 0, -3)
+# randomize_positions: True
+# start_jitter_radius: 1.0
+# goal_jitter_radius: 3.0
+# max_episode_steps: 150
+# dt: 0.5
+# speed: 2.0
+# state_dim: 15
+# action_dim: 27
+# lr: 0.0001
+# gamma: 0.99
+# buffer_capacity: 1000000
+# batch_size: 32
+# epsilon_start: 1.0
+# epsilon_end: 0.2
+# epsilon_decay_steps: 24000
+# target_update_freq: 250
+# use_double: True
+# use_dueling: True
+# ----------------
+episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,start_position,goal_position,is_success,is_crash,is_out_of_bounds,is_timeout
+1,-33.5068,-33.5068,0.0,150,0.996,1.76,(-0.757, 0.571, -2.762),(49.507, -2.824, -2.788),False,False,True,True
+2,-13.1755,-23.3411,0.0,150,0.991,3.52,(0.241, -0.187, -3.374),(48.567, 0.956, -4.797),False,False,False,True
+3,-32.8624,-26.5149,0.0,150,0.986,5.26,(-0.077, 0.544, -2.412),(52.458, -0.532, -1.417),False,False,False,True
+4,-6.7672,-21.578,0.0,150,0.981,7.0,(0.042, -0.773, -2.51),(50.742, -0.719, -2.116),False,False,False,True
+# [00:46:32] Training complete. 4 episodes in 7.0 min. Final avg reward (last 10): -21.58. Final success rate (last 10): 0.0%.

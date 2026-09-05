@@ -31,7 +31,7 @@ MAX_EPISODE_STEPS = 150
 DT = 0.5
 SPEED = 2.0
 
-NUM_EPISODES = 100
+NUM_EPISODES = 200
 SAVE_EVERY = 10
 PRINT_EVERY = 1
 EVAL_EVERY = 20
@@ -42,7 +42,7 @@ EVAL_EPISODES = 5
 # d3qn_random_start_goal_nodepth_200 run.
 WARM_START_CHECKPOINT = os.path.join(
     os.path.dirname(__file__), "..", "results",
-    "d3qn_city_test_400_v1_20260823_192020_ep400.pt"  # <-- verify this matches your actual saved filename
+    "cityenvision_run_400_20260831_184145_ep400.pt"  # <-- verify this matches your actual saved filename
 )
 
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "..", "results")

@@ -24,7 +24,7 @@ from datetime import datetime
 
 # ---- config (matches your logged run configs) ----
 START_POSITION = (0.0, 0.0, -3.0)
-GOAL_POSITION = (50.0, 0.0, -3.0)
+GOAL_POSITION = (70.0, 30.0, -3.0)
 DT = 0.5                # seconds per step, matches your env
 SPEED = 2.0              # m/s, matches your env's action magnitude
 MAX_STEPS = 150           # matches max_episode_steps

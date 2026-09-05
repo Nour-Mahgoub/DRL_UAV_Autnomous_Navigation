@@ -1,0 +1,71 @@
+# Config for the City environment.
+# TODO: most values below are still PLACEHOLDERS — none of it has been verified
+# against the actual City map yet. Fill these in using the checks discussed:
+#   1. Pick a candidate start/goal pair, verify it's flyable and
+#      collision-free with hardcoded_flight_test.py before trusting it.
+#   2. Set workspace_bounds to match City's actual scale (it's a much
+#      bigger map than Blocks — these Blocks-sized bounds are almost
+#      certainly wrong here).
+# Do not train against this file until the TODOs are resolved.
+
+env_name: cityenv
+
+start_position: [0, 0, -5]   # TODO — fill in manually
+goal_position: [20, 0, -5]   # TODO — fill in manually
+
+workspace_bounds:
+  x: [-250, 250]   # TODO: verify against actual City map extents
+  y: [-250, 250]   # TODO: verify against actual City map extents
+  z: [-100, 0]     # TODO: verify — City likely has taller structures than Blocks
+
+start_jitter_radius: 1.0    # TODO: reconsider scale for City
+goal_jitter_radius: 3.0     # TODO: reconsider scale for City
+
+max_depth_meters: 20.0      # TODO: City likely has longer sightlines (streets) than Blocks
+accept_radius: 1.0         # TODO: consider making this smaller for City, which has more open space
+# Filled from scene_objects_20260828_212140.md (5707 objects, City map).
+segmentation_classes:
+  0: [  # ignore — indoor clutter + non-physical engine actors
+    "^Kitchen_.*", "^Sofa.*", "^sofa_long.*", "^Bed_Double.*", "^Bookcase.*",
+    "^Fridge.*", "^Oven.*", "^Sink.*", "^Toilet.*", "^Chair.*", "^Book.*",
+    "^Headphones.*", "^Gamepad.*", "^Skateboard.*", "^Pool_Table.*",
+    "^coffee_table.*", "^small_table.*", "^table.*", "^Laptop.*",
+    "^Keyboard.*", "^Mouse.*", "^Tablet.*", "^Office_Desk.*", "^Lcd.*",
+    "^lcd.*", "^Tft.*", "^desktop.*", "^Dufflebag.*", "^Light_Switch.*",
+    "^Plug_Socket.*", "^Shelf.*", "^Fridge_Alphabet.*", "^extractor.*",
+    "^fan.*", "^BP_Fan.*", "^Paint_Can.*", "^Drinks_Can.*", "^Mug.*",
+    "^Fireplace.*", "^Curtain.*", "^Picture_Frame.*", "^Lamp.*",
+    ".*PointLight.*", "^DecalActor.*", "^CameraActor.*", "^BP_PIPCamera_C.*",
+    "^SkyLight.*", "^AtmosphericFog.*", "^ExponentialHeightFog.*",
+    "^LightSource.*", "^PlayerCameraManager.*", "^GameplayDebugger.*",
+    "^WeatherActor_C.*", "^MenuActor_C.*", "^GameStateBase.*",
+    "^GameNetworkManager.*", "^GameSession.*", "^PlayerState.*",
+    "^WorldSettings.*", "^CameraDirector.*", "^SimHUD.*",
+    "^PlayerController.*", "^LandscapeGizmoActiveActor.*",
+    "^SphereReflectionCapture.*", "^DemoMapOptimized_C.*",
+    "^NetworkPlayerStart.*",
+    "^AbstractNavData.*", "^RecastNavMesh.*", "^AirSimGameMode.*",
+    "^SimpleFlight.*", "^SimModeWorldMultiRotor.*", "^CullDistanceVolume.*",
+    "^PostProcessVolume.*", "^NavMeshBoundsVolume.*", "^ExternalCamera.*",
+    "^DefaultPhysicsVolume.*", "^ParticleEventManager.*", "^MatineeActor.*",
+    "^Outdoor_Ambience.*"
+  ]
+  1: ["^Road.*", "^Driveway.*", "^driveway.*", "^Landscape.*", "^Floor.*", "^Sidewalk.*"]  # ground
+  2: [  # buildings
+    "^Outer_Wall.*", "^Inner_Wall.*", "^Wall_Low.*", "^Small_House.*",
+    "^Medium_House_Prefab.*", "^House_Base.*", "^Roof.*", "^Chimney.*",
+    "^Porch.*", "^Veranda.*", "^Banister.*", "^Staircase.*",
+    "^Outdoor_Steps.*", "^Garage_Door.*", "^Outer_Door.*", "^Inner_Door.*",
+    "^Cladding_Edge.*", "^Car_Porch.*", "^Shutters.*", "^Monument.*",
+    "^Structural_Support.*"
+  ]
+  3: [  # low obstacles
+    "^Fence.*", "^Hedge.*", "^Bench.*", "^Garden_Chair.*",
+    "^Garden_Tressel.*", "^Rock.*", "^Garden_Rocks.*", "^bin.*",
+    "^Basketball_Hoop.*", "^Street_Sign.*", "^Stop_Sign.*"
+  ]
+  4: ["^Fir.*", "^Birch.*", "^Tree.*", "^Oak.*", "^Leaves.*", "^InstancedFoliageActor.*"]  # vegetation
+  5: ["^Power_Line.*", "^Drain_Pipe.*"]  # overhead hazards
+  6: ["^Car(_|$).*", "^Car_Porch_Prefab.*"]  # vehicles
+  7: ["^Swimming_Pool.*"]  # water
+  8: [".*AnimalAIController.*", "^DeerBothBP.*", "^RaccoonBP.*", "^BRPlayer.*"]  # dynamic actors
