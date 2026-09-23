@@ -1,0 +1,611 @@
+# run_name: lstm_v3_logging_300
+# timestamp: 20260921_141546
+# ---- config ----
+# architecture: D3RQN
+# environment: blocks
+# goal_position: (30.0, 0.0, -3.0)
+# start_position: (0, 0, -3)
+# randomize_positions: True
+# start_jitter_radius: 2.0
+# goal_jitter_radius: 5.0
+# max_episode_steps: 150
+# dt: 0.5
+# speed: 2.0
+# state_dim: 15
+# action_dim: 27
+# lr: 0.0001
+# gamma: 0.99
+# buffer_capacity: 5000
+# batch_size: 32
+# seq_len: 20
+# epsilon_start: 1.0
+# epsilon_end: 0.2
+# epsilon_decay_steps: 24000
+# target_update_freq: 250
+# use_double: True
+# ----------------
+episode,reward,avg10,success_rate10,steps,epsilon,elapsed_min,start_position,goal_position,is_success,is_crash,is_out_of_bounds,is_timeout
+1,-21.343,-21.343,0.0,150,1.0,2.6,(-0.87, 0.231, -2.906),(26.393, 0.749, -5.534),False,False,False,True
+2,-18.7418,-20.0424,0.0,150,1.0,5.2,(-1.092, 0.681, -1.471),(26.38, 0.159, -4.78),False,False,False,True
+3,-37.8857,-25.9902,0.0,115,1.0,7.21,(0.816, 1.41, -2.126),(27.855, -0.394, -7.365),False,False,True,False
+4,-38.4614,-29.108,0.0,150,1.0,9.83,(0.992, -0.028, -3.469),(32.095, 2.299, -3.557),False,False,False,True
+5,0.3414,-23.2181,0.0,11,1.0,10.11,(1.537, -0.052, -2.617),(31.97, 3.647, -1.513),False,False,True,False
+6,-24.2725,-23.3938,0.0,150,1.0,12.68,(0.86, 0.759, -1.981),(30.102, -0.665, -2.619),False,False,False,True
+7,-31.3409,-24.5291,0.0,150,1.0,15.28,(1.622, -0.093, -4.0),(31.159, -2.746, -1.506),False,False,False,True
+8,-25.4176,-24.6402,0.0,150,1.0,17.88,(-0.161, 1.729, -2.307),(31.905, -0.393, -5.076),False,False,False,True
+9,-28.1383,-25.0289,0.0,150,1.0,20.49,(-0.79, -0.703, -3.398),(26.272, 0.803, -4.825),False,False,False,True
+10,-13.8023,-23.9062,0.0,150,1.0,23.09,(-0.711, 0.303, -2.723),(32.599, -1.127, -5.9),False,False,False,True
+11,-25.1727,-24.2892,0.0,150,1.0,25.7,(-0.823, -1.273, -2.337),(31.317, -2.746, -6.55),False,False,False,True
+12,1.3066,-22.2843,0.0,8,1.0,25.92,(0.967, 1.042, -2.427),(32.947, 1.079, -1.695),False,False,True,False
+13,1.3128,-18.3645,0.0,18,1.0,26.31,(-0.423, -1.306, -1.595),(32.279, -1.041, -6.9),False,False,True,False
+14,-34.3679,-17.9551,0.0,150,1.0,28.91,(-1.493, -1.017, -3.511),(31.915, 0.072, -3.464),False,False,False,True
+15,-15.2849,-19.5177,0.0,150,1.0,31.52,(-0.352, 1.262, -2.455),(31.666, -1.13, -3.812),False,False,False,True
+16,-35.7245,-20.6629,0.0,150,1.0,34.12,(1.386, 1.35, -3.479),(33.01, 2.187, -1.0),False,False,False,True
+17,-30.1482,-20.5437,0.0,150,1.0,36.73,(-0.761, -1.545, -2.78),(30.94, 0.625, -1.0),False,False,False,True
+18,-10.1378,-19.0157,0.0,150,1.0,39.29,(-0.612, -0.698, -1.361),(32.615, -1.569, -2.599),False,False,False,True
+19,-34.0669,-19.6086,0.0,150,1.0,41.89,(-1.033, 0.577, -1.475),(30.441, -1.821, -1.0),False,False,False,True
+20,-43.4567,-22.574,0.0,150,1.0,44.48,(1.32, -0.179, -2.071),(30.061, -0.509, -2.882),False,False,False,True
+# [15:00:59] [greedy-eval @ episode 20] success_rate=0.0% over 5 episodes
+21,-3.3278,-20.3895,0.0,8,1.0,45.39,(1.57, -0.78, -2.52),(27.925, -0.04, -1.0),False,False,True,False
+22,-22.5828,-22.7784,0.0,150,1.0,48.0,(-0.957, -0.518, -3.117),(31.05, -2.302, -4.418),False,False,False,True
+23,-18.2583,-24.7356,0.0,150,1.0,50.6,(-1.488, -0.984, -3.606),(33.372, 3.575, -2.76),False,False,False,True
+24,-34.7188,-24.7707,0.0,150,1.0,53.17,(-0.674, 0.528, -1.95),(28.762, -2.567, -1.0),False,False,False,True
+25,-41.2537,-27.3675,0.0,123,1.0,55.29,(-0.315, -0.279, -1.802),(27.668, -3.493, -2.672),False,False,True,False
+26,-32.1381,-27.0089,0.0,150,1.0,57.91,(-0.753, -0.959, -4.166),(30.981, -0.109, -1.0),False,False,False,True
+27,-0.429,-24.037,0.0,17,1.0,58.26,(-0.34, 0.1, -1.525),(26.393, 1.616, -1.361),False,False,True,False
+28,-36.3433,-26.6575,0.0,133,1.0,60.56,(0.642, -0.105, -3.915),(27.494, -2.75, -1.618),False,False,True,False
+29,-38.3782,-27.0887,0.0,150,1.0,63.13,(-0.826, 0.49, -1.384),(26.448, 0.285, -2.933),False,False,False,True
+30,-30.1639,-25.7594,0.0,150,1.0,65.73,(0.129, 0.354, -4.809),(31.569, 0.811, -1.0),False,False,False,True
+31,-19.4273,-27.3693,0.0,150,1.0,68.35,(0.883, 0.232, -3.192),(26.384, -2.115, -4.68),False,False,False,True
+32,-28.6212,-27.9732,0.0,150,1.0,70.92,(0.74, -0.497, -1.668),(25.863, -1.059, -5.13),False,False,False,True
+33,-16.6974,-27.8171,0.0,150,0.995,73.55,(0.294, -1.058, -3.484),(30.444, -3.235, -1.655),False,False,False,True
+# [15:29:22] [diag @ episode 33] avg_loss=0.0789 avg_mean_abs_q=0.1972 max_grad_norm=0.5751
+34,-14.1794,-25.7632,0.0,150,0.99,76.15,(1.347, -0.411, -2.623),(31.506, 1.235, -6.467),False,False,False,True
+# [15:31:58] [diag @ episode 34] avg_loss=0.0356 avg_mean_abs_q=0.3624 max_grad_norm=3.9437
+35,-28.5861,-24.4964,0.0,150,0.985,78.74,(0.535, 0.989, -2.818),(34.445, -0.7, -1.877),False,False,False,True
+# [15:34:34] [diag @ episode 35] avg_loss=0.0169 avg_mean_abs_q=0.5951 max_grad_norm=1.7826
+36,-10.7664,-22.3592,0.0,150,0.98,81.34,(-0.39, 1.335, -2.572),(33.225, -0.129, -6.162),False,False,False,True
+# [15:37:10] [diag @ episode 36] avg_loss=0.0282 avg_mean_abs_q=0.7844 max_grad_norm=14.6962
+37,-0.2892,-22.3452,0.0,10,0.9797,81.6,(1.166, -0.479, -2.985),(30.727, 1.579, -4.611),False,False,True,False
+# [15:37:26] [diag @ episode 37] avg_loss=0.0195 avg_mean_abs_q=0.9049 max_grad_norm=0.8224
+38,-0.0445,-18.7154,0.0,14,0.9792,81.93,(0.625, 0.337, -4.361),(28.658, -1.994, -2.62),False,False,True,False
+# [15:37:45] [diag @ episode 38] avg_loss=0.0203 avg_mean_abs_q=0.8915 max_grad_norm=0.6231
+39,-10.8691,-15.9645,0.0,45,0.9777,82.76,(-0.285, 0.152, -3.338),(29.556, -1.437, -7.591),False,False,True,False
+# [15:38:35] [diag @ episode 39] avg_loss=0.0188 avg_mean_abs_q=0.8900 max_grad_norm=0.9041
+40,-12.6979,-14.2178,0.0,150,0.9727,85.36,(-0.576, 1.084, -2.338),(25.377, 0.066, -1.744),False,False,False,True
+# [15:41:11] [diag @ episode 40] avg_loss=0.0331 avg_mean_abs_q=1.1179 max_grad_norm=25.7631
+# [15:43:30] [greedy-eval @ episode 40] success_rate=0.0% over 5 episodes
+41,-12.6717,-13.5423,0.0,150,0.9677,90.27,(0.791, 0.86, -2.327),(27.673, 2.948, -1.0),False,False,False,True
+# [15:46:06] [diag @ episode 41] avg_loss=0.0216 avg_mean_abs_q=1.4359 max_grad_norm=1.6202
+42,-1.9807,-10.8782,0.0,3,0.9676,90.39,(-0.394, 0.17, -2.44),(27.393, -2.324, -5.147),False,False,True,False
+# [15:46:13] [diag @ episode 42] avg_loss=0.0192 avg_mean_abs_q=1.3816 max_grad_norm=0.4351
+43,-26.0605,-11.8145,0.0,150,0.9626,92.98,(0.092, -0.444, -3.818),(30.497, -0.269, -1.0),False,False,False,True
+# [15:48:48] [diag @ episode 43] avg_loss=0.0419 avg_mean_abs_q=2.0588 max_grad_norm=27.2988
+44,-0.8252,-10.4791,0.0,13,0.9622,93.3,(-0.997, 0.707, -3.182),(27.958, -1.77, -1.576),False,False,True,False
+# [15:49:07] [diag @ episode 44] avg_loss=0.0254 avg_mean_abs_q=2.2052 max_grad_norm=1.0134
+45,-2.4417,-7.8647,0.0,9,0.9619,93.55,(-1.041, 1.388, -3.347),(27.997, 3.205, -5.014),False,False,True,False
+# [15:49:22] [diag @ episode 45] avg_loss=0.0252 avg_mean_abs_q=2.2138 max_grad_norm=1.2473
+46,-15.0162,-8.2897,0.0,150,0.9569,96.17,(1.784, 0.018, -3.506),(33.084, -0.047, -1.0),False,False,False,True
+# [15:52:00] [diag @ episode 46] avg_loss=0.0471 avg_mean_abs_q=2.4889 max_grad_norm=28.0327
+47,-39.0415,-12.1649,0.0,150,0.9519,98.79,(-1.427, 0.647, -3.298),(27.318, 0.67, -1.768),False,False,False,True
+# [15:54:37] [diag @ episode 47] avg_loss=0.0296 avg_mean_abs_q=3.1645 max_grad_norm=2.6467
+48,-18.2372,-13.9842,0.0,150,0.9469,101.42,(-1.148, 0.863, -3.014),(28.622, -1.358, -1.0),False,False,False,True
+# [15:57:15] [diag @ episode 48] avg_loss=0.0483 avg_mean_abs_q=3.7962 max_grad_norm=28.0757
+49,-24.6435,-15.3616,0.0,150,0.9419,104.05,(-0.749, -1.273, -3.963),(27.823, -3.356, -3.089),False,False,False,True
+# [15:59:52] [diag @ episode 49] avg_loss=0.0252 avg_mean_abs_q=4.2102 max_grad_norm=1.5070
+50,-12.5699,-15.3488,0.0,150,0.9369,106.67,(-0.099, 1.181, -3.75),(28.504, -2.76, -6.577),False,False,False,True
+# [16:02:30] [diag @ episode 50] avg_loss=0.0517 avg_mean_abs_q=5.1599 max_grad_norm=33.6693
+51,-2.6586,-14.3475,0.0,24,0.9361,107.19,(-0.734, -0.694, -3.539),(27.693, 3.921, -4.734),False,False,True,False
+# [16:03:01] [diag @ episode 51] avg_loss=0.0260 avg_mean_abs_q=5.2007 max_grad_norm=2.2600
+52,-2.3923,-14.3887,0.0,29,0.9351,107.78,(-0.337, -1.478, -3.696),(32.147, 0.375, -4.865),False,False,True,False
+# [16:03:36] [diag @ episode 52] avg_loss=0.0253 avg_mean_abs_q=5.1684 max_grad_norm=1.3633
+53,-15.9353,-13.3761,0.0,150,0.9301,110.39,(1.732, 0.7, -3.073),(29.108, -3.534, -5.155),False,False,False,True
+# [16:06:13] [diag @ episode 53] avg_loss=0.0469 avg_mean_abs_q=5.8415 max_grad_norm=30.6935
+54,-29.0195,-16.1956,0.0,150,0.9251,113.0,(-0.998, -0.842, -3.494),(27.711, -0.944, -4.376),False,False,False,True
+# [16:08:49] [diag @ episode 54] avg_loss=0.0238 avg_mean_abs_q=6.2343 max_grad_norm=1.8961
+55,-13.4914,-17.3005,0.0,150,0.9201,115.61,(-1.123, -0.753, -4.153),(32.03, 0.12, -1.0),False,False,False,True
+# [16:11:26] [diag @ episode 55] avg_loss=0.0440 avg_mean_abs_q=7.2053 max_grad_norm=29.9638
+56,-11.6097,-16.9599,0.0,150,0.9151,118.22,(-0.812, 1.049, -3.536),(29.794, 2.865, -5.477),False,False,False,True
+# [16:14:03] [diag @ episode 56] avg_loss=0.0444 avg_mean_abs_q=7.5455 max_grad_norm=34.8442
+57,-3.9635,-13.4521,0.0,150,0.9101,120.83,(-1.384, -0.593, -3.913),(31.094, -2.519, -1.0),False,False,False,True
+# [16:16:39] [diag @ episode 57] avg_loss=0.0247 avg_mean_abs_q=8.2337 max_grad_norm=3.8531
+58,-23.4826,-13.9766,0.0,150,0.9051,123.43,(0.947, 0.057, -2.426),(30.441, -3.455, -1.144),False,False,False,True
+# [16:19:15] [diag @ episode 58] avg_loss=0.0465 avg_mean_abs_q=8.8840 max_grad_norm=34.6835
+59,-18.0085,-13.3131,0.0,150,0.9001,126.06,(0.262, 0.625, -4.303),(31.319, 0.678, -7.363),False,False,False,True
+# [16:21:53] [diag @ episode 59] avg_loss=0.0218 avg_mean_abs_q=9.2677 max_grad_norm=2.9885
+60,0.3476,-12.0214,0.0,150,0.8951,128.66,(-0.8, 1.815, -3.16),(28.592, 1.48, -5.667),False,False,False,True
+# [16:24:29] [diag @ episode 60] avg_loss=0.0408 avg_mean_abs_q=10.2735 max_grad_norm=32.5068
+# [16:27:52] [greedy-eval @ episode 60] success_rate=20.0% over 5 episodes
+61,0.2064,-11.7349,0.0,150,0.8901,134.63,(0.449, -0.249, -4.257),(30.511, -0.269, -6.746),False,False,False,True
+# [16:30:28] [diag @ episode 61] avg_loss=0.0402 avg_mean_abs_q=10.5511 max_grad_norm=35.3441
+62,-22.2891,-13.7246,0.0,150,0.8851,137.24,(0.023, -1.704, -3.145),(33.746, 0.812, -2.977),False,False,False,True
+# [16:33:04] [diag @ episode 62] avg_loss=0.0243 avg_mean_abs_q=11.2168 max_grad_norm=5.6805
+63,-25.9872,-14.7298,0.0,150,0.8801,139.87,(-0.09, -0.865, -3.619),(25.682, 0.029, -3.354),False,False,False,True
+# [16:35:42] [diag @ episode 63] avg_loss=0.0424 avg_mean_abs_q=11.7481 max_grad_norm=30.6450
+64,-9.4022,-12.768,0.0,150,0.8751,142.49,(-1.615, 0.188, -2.66),(30.172, 3.634, -2.931),False,False,False,True
+# [16:38:19] [diag @ episode 64] avg_loss=0.0226 avg_mean_abs_q=12.1619 max_grad_norm=4.2810
+65,-14.3606,-12.8549,0.0,150,0.8701,145.13,(0.755, 0.358, -3.645),(32.618, 1.141, -1.0),False,False,False,True
+# [16:40:57] [diag @ episode 65] avg_loss=0.0408 avg_mean_abs_q=13.0207 max_grad_norm=36.7590
+66,-3.0068,-11.9947,0.0,150,0.8651,147.73,(0.316, 0.375, -3.861),(30.539, -4.716, -3.707),False,False,False,True
+# [16:43:33] [diag @ episode 66] avg_loss=0.0386 avg_mean_abs_q=13.2288 max_grad_norm=33.4482
+67,-11.903,-12.7886,0.0,150,0.8601,150.33,(0.3, -0.222, -4.119),(28.976, -1.492, -3.276),False,False,False,True
+# [16:46:09] [diag @ episode 67] avg_loss=0.0223 avg_mean_abs_q=13.8468 max_grad_norm=8.4660
+68,0.6646,-10.3739,0.0,3,0.86,150.47,(0.937, 1.006, -2.133),(27.623, 1.714, -5.877),False,False,True,False
+# [16:46:18] [diag @ episode 68] avg_loss=0.0230 avg_mean_abs_q=14.0264 max_grad_norm=0.5977
+69,-8.6008,-9.4331,0.0,150,0.855,153.09,(0.033, -0.9, -2.767),(33.951, -2.215, -2.684),False,False,False,True
+# [16:48:55] [diag @ episode 69] avg_loss=0.0435 avg_mean_abs_q=14.3655 max_grad_norm=32.6174
+70,-13.8291,-10.8508,0.0,150,0.85,155.72,(0.254, 0.936, -4.347),(28.604, -2.086, -3.744),False,False,False,True
+# [16:51:32] [diag @ episode 70] avg_loss=0.0251 avg_mean_abs_q=14.7642 max_grad_norm=3.5900
+71,-9.9964,-11.8711,0.0,150,0.845,158.32,(-0.892, -0.109, -3.061),(30.091, 2.988, -2.789),False,False,False,True
+# [16:54:09] [diag @ episode 71] avg_loss=0.0359 avg_mean_abs_q=15.5014 max_grad_norm=29.6337
+72,-8.877,-10.5299,0.0,150,0.84,160.92,(0.208, -0.237, -4.107),(29.801, -0.257, -5.641),False,False,False,True
+# [16:56:45] [diag @ episode 72] avg_loss=0.0343 avg_mean_abs_q=15.7529 max_grad_norm=30.4402
+73,-1.9991,-8.131,0.0,6,0.8398,161.11,(0.076, -1.294, -2.228),(32.092, 1.143, -1.0),False,False,True,False
+# [16:56:56] [diag @ episode 73] avg_loss=0.0317 avg_mean_abs_q=16.3368 max_grad_norm=3.7810
+74,-3.3828,-7.5291,0.0,150,0.8348,163.71,(-1.079, -0.473, -2.347),(33.726, 0.876, -1.0),False,False,False,True
+# [16:59:32] [diag @ episode 74] avg_loss=0.0346 avg_mean_abs_q=16.1834 max_grad_norm=3.7182
+75,-12.4545,-7.3385,0.0,150,0.8298,166.31,(1.183, 0.501, -2.607),(33.189, 1.434, -1.0),False,False,False,True
+# [17:02:08] [diag @ episode 75] avg_loss=0.0429 avg_mean_abs_q=16.6654 max_grad_norm=31.4383
+76,-0.8439,-7.1222,0.0,4,0.8297,166.47,(-0.319, 1.368, -2.15),(28.156, -1.095, -7.337),False,False,True,False
+# [17:02:17] [diag @ episode 76] avg_loss=0.0295 avg_mean_abs_q=16.7934 max_grad_norm=3.7812
+77,6.7085,-5.261,0.0,150,0.8247,169.09,(0.921, -0.126, -4.161),(32.708, 2.863, -1.0),False,False,False,True
+# [17:04:55] [diag @ episode 77] avg_loss=0.0389 avg_mean_abs_q=16.9549 max_grad_norm=32.4011
+78,-11.0993,-6.4374,0.0,150,0.8197,171.71,(-0.196, -1.363, -4.342),(26.141, -2.644, -2.262),False,False,False,True
+# [17:07:32] [diag @ episode 78] avg_loss=0.0408 avg_mean_abs_q=17.5298 max_grad_norm=16.3032
+79,4.3217,-5.1452,0.0,150,0.8147,174.32,(-0.996, 1.408, -3.902),(31.395, -4.104, -1.623),False,False,False,True
+# [17:10:08] [diag @ episode 79] avg_loss=0.0464 avg_mean_abs_q=17.8137 max_grad_norm=30.3661
+80,1.6997,-3.5923,0.0,150,0.8097,176.92,(-0.639, 1.529, -3.248),(29.889, 1.735, -2.936),False,False,False,True
+# [17:12:44] [diag @ episode 80] avg_loss=0.0339 avg_mean_abs_q=18.2017 max_grad_norm=6.5070
+# [17:16:11] [greedy-eval @ episode 80] success_rate=60.0% over 5 episodes
+81,-10.6236,-3.655,0.0,150,0.8047,182.96,(1.122, -0.395, -3.374),(28.026, 1.552, -1.0),False,False,False,True
+# [17:18:47] [diag @ episode 81] avg_loss=0.0430 avg_mean_abs_q=18.7303 max_grad_norm=32.5687
+82,5.8629,-2.181,0.0,150,0.7997,185.58,(0.101, -0.831, -3.867),(32.695, 3.93, -3.26),False,False,False,True
+# [17:21:24] [diag @ episode 82] avg_loss=0.0374 avg_mean_abs_q=18.9131 max_grad_norm=29.9335
+83,-5.5478,-2.5359,0.0,150,0.7947,188.19,(-1.431, 0.309, -3.694),(29.465, -0.751, -4.01),False,False,False,True
+# [17:24:01] [diag @ episode 83] avg_loss=0.0411 avg_mean_abs_q=19.6029 max_grad_norm=14.0172
+84,69.0204,4.7044,10.0,75,0.7922,189.53,(0.36, 0.46, -3.435),(27.875, -0.163, -2.237),True,False,False,False
+# [17:25:21] [diag @ episode 84] avg_loss=0.0306 avg_mean_abs_q=19.5302 max_grad_norm=7.1338
+85,11.5959,7.1095,10.0,150,0.7872,192.13,(1.306, 0.405, -2.891),(33.158, 2.075, -1.0),False,False,False,True
+# [17:27:57] [diag @ episode 85] avg_loss=0.0400 avg_mean_abs_q=20.0305 max_grad_norm=27.0327
+86,1.2922,7.3231,10.0,150,0.7822,194.7,(0.509, 0.14, -1.175),(27.589, 2.338, -5.549),False,False,False,True
+# [17:30:31] [diag @ episode 86] avg_loss=0.0344 avg_mean_abs_q=20.1688 max_grad_norm=27.2563
+87,16.9088,8.3431,10.0,150,0.7772,197.29,(-0.942, -1.312, -2.383),(32.983, -3.069, -3.652),False,False,False,True
+# [17:33:07] [diag @ episode 87] avg_loss=0.0318 avg_mean_abs_q=20.6088 max_grad_norm=10.8936
+88,1.1844,9.5715,10.0,150,0.7722,199.9,(-0.823, -1.605, -2.735),(33.932, -0.827, -3.219),False,False,False,True
+# [17:35:43] [diag @ episode 88] avg_loss=0.0407 avg_mean_abs_q=20.9665 max_grad_norm=25.2516
+89,3.7414,9.5134,10.0,150,0.7672,202.46,(-0.072, 0.178, -1.563),(26.47, 2.175, -5.533),False,False,False,True
+# [17:38:17] [diag @ episode 89] avg_loss=0.0339 avg_mean_abs_q=21.1953 max_grad_norm=14.5635
+90,2.3679,9.5803,10.0,150,0.7622,205.07,(1.245, -1.294, -2.855),(28.963, 3.443, -4.454),False,False,False,True
+# [17:40:53] [diag @ episode 90] avg_loss=0.0461 avg_mean_abs_q=21.6820 max_grad_norm=24.4907
+91,68.855,17.5281,20.0,85,0.7593,206.58,(1.669, -0.321, -3.114),(29.589, 0.603, -6.338),True,False,False,False
+# [17:42:24] [diag @ episode 91] avg_loss=0.0379 avg_mean_abs_q=21.6572 max_grad_norm=7.0298
+92,11.4152,18.0833,20.0,150,0.7543,209.19,(1.688, 0.081, -3.329),(33.184, 0.526, -5.069),False,False,False,True
+# [17:45:01] [diag @ episode 92] avg_loss=0.0467 avg_mean_abs_q=22.1783 max_grad_norm=24.1499
+93,-4.0603,18.2321,20.0,150,0.7493,211.8,(-1.036, -0.854, -4.01),(33.149, -1.283, -4.787),False,False,False,True
+# [17:47:37] [diag @ episode 93] avg_loss=0.0431 avg_mean_abs_q=22.2384 max_grad_norm=27.3026
+94,-2.156,11.1144,10.0,21,0.7486,212.24,(1.388, 0.76, -2.59),(30.032, -4.541, -3.783),False,False,True,False
+# [17:48:04] [diag @ episode 94] avg_loss=0.0476 avg_mean_abs_q=22.6048 max_grad_norm=10.2221
+95,7.8624,10.7411,10.0,150,0.7436,214.81,(-0.558, 0.971, -1.477),(27.166, 0.667, -1.0),False,False,False,True
+# [17:50:38] [diag @ episode 95] avg_loss=0.0418 avg_mean_abs_q=22.6122 max_grad_norm=8.4189
+96,0.694,10.6813,10.0,12,0.7432,215.08,(-0.362, 0.667, -1.176),(28.267, 1.575, -2.955),False,False,True,False
+# [17:50:54] [diag @ episode 96] avg_loss=0.0230 avg_mean_abs_q=22.6282 max_grad_norm=2.4176
+97,7.4561,9.736,10.0,36,0.742,215.78,(0.746, 1.544, -2.575),(29.705, -0.325, -5.856),False,False,True,False
+# [17:51:36] [diag @ episode 97] avg_loss=0.0472 avg_mean_abs_q=22.5381 max_grad_norm=6.0529
+98,7.2436,10.3419,10.0,150,0.737,218.35,(-0.233, 0.089, -2.464),(31.786, 1.161, -5.115),False,False,False,True
+# [17:54:10] [diag @ episode 98] avg_loss=0.0563 avg_mean_abs_q=23.0234 max_grad_norm=24.8738
+99,4.052,10.373,10.0,150,0.732,220.91,(-0.069, -0.24, -1.762),(27.722, -2.365, -6.112),False,False,False,True
+# [17:56:44] [diag @ episode 99] avg_loss=0.0543 avg_mean_abs_q=23.1798 max_grad_norm=24.2458
+100,9.821,11.1183,10.0,150,0.727,223.53,(1.293, 0.055, -3.831),(31.301, -3.0, -6.523),False,False,False,True
+# [17:59:21] [diag @ episode 100] avg_loss=0.0495 avg_mean_abs_q=23.5674 max_grad_norm=15.4858
+# [18:12:20] [greedy-eval @ episode 100] success_rate=0.0% over 5 episodes
+101,0.804,4.3132,0.0,150,0.722,239.1,(1.575, -0.598, -2.444),(29.948, 3.635, -2.982),False,False,False,True
+# [18:14:55] [diag @ episode 101] avg_loss=0.0475 avg_mean_abs_q=23.7945 max_grad_norm=25.0975
+102,14.3604,4.6077,0.0,150,0.717,241.7,(-1.959, -0.065, -2.748),(32.992, 1.33, -1.397),False,False,False,True
+# [18:17:32] [diag @ episode 102] avg_loss=0.0438 avg_mean_abs_q=23.8936 max_grad_norm=16.1017
+103,7.2709,5.7408,0.0,150,0.712,244.31,(1.192, -1.298, -3.719),(30.912, 1.52, -1.045),False,False,False,True
+# [18:20:08] [diag @ episode 103] avg_loss=0.0488 avg_mean_abs_q=24.4064 max_grad_norm=22.8787
+104,11.5008,7.1065,0.0,150,0.707,246.92,(-1.056, -1.21, -3.683),(33.695, -2.791, -3.221),False,False,False,True
+# [18:22:44] [diag @ episode 104] avg_loss=0.0462 avg_mean_abs_q=24.5180 max_grad_norm=26.3868
+105,-1.6076,6.1595,0.0,150,0.702,249.52,(-0.74, -1.453, -3.375),(29.442, 1.493, -4.041),False,False,False,True
+# [18:25:21] [diag @ episode 105] avg_loss=0.0435 avg_mean_abs_q=24.8443 max_grad_norm=11.7272
+106,8.0891,6.899,0.0,150,0.697,252.12,(1.277, -0.512, -2.274),(29.047, -4.735, -4.243),False,False,False,True
+# [18:27:56] [diag @ episode 106] avg_loss=0.0469 avg_mean_abs_q=25.0296 max_grad_norm=22.5287
+107,7.7836,6.9318,0.0,150,0.692,254.74,(-0.364, -0.699, -3.685),(29.289, -4.29, -1.291),False,False,False,True
+# [18:30:34] [diag @ episode 107] avg_loss=0.0372 avg_mean_abs_q=25.2306 max_grad_norm=14.8328
+108,9.6157,7.169,0.0,150,0.687,257.34,(1.499, 0.233, -3.063),(26.93, -0.325, -6.635),False,False,False,True
+# [18:33:10] [diag @ episode 108] avg_loss=0.0514 avg_mean_abs_q=25.5633 max_grad_norm=21.6536
+109,0.1454,6.7783,0.0,3,0.6869,257.46,(0.852, 0.415, -2.318),(29.764, 3.004, -5.705),False,False,True,False
+# [18:33:17] [diag @ episode 109] avg_loss=0.0238 avg_mean_abs_q=25.8502 max_grad_norm=2.2711
+110,-0.1403,5.7822,0.0,3,0.6868,257.58,(-0.513, -0.045, -1.915),(33.965, 1.696, -5.231),False,False,True,False
+# [18:33:24] [diag @ episode 110] avg_loss=0.0646 avg_mean_abs_q=26.3970 max_grad_norm=2.8173
+111,12.8634,6.9882,0.0,150,0.6818,260.18,(0.138, 1.245, -3.375),(28.155, 0.083, -3.935),False,False,False,True
+# [18:36:00] [diag @ episode 111] avg_loss=0.0586 avg_mean_abs_q=25.6847 max_grad_norm=25.4524
+112,13.079,6.86,0.0,150,0.6768,262.81,(0.905, -0.961, -4.098),(31.653, 1.245, -4.606),False,False,False,True
+# [18:38:38] [diag @ episode 112] avg_loss=0.0489 avg_mean_abs_q=25.7389 max_grad_norm=13.9043
+113,1.9792,6.3308,0.0,150,0.6718,265.42,(-0.149, -0.407, -1.883),(27.231, -2.677, -4.106),False,False,False,True
+# [18:41:14] [diag @ episode 113] avg_loss=0.0538 avg_mean_abs_q=26.0122 max_grad_norm=26.0789
+114,4.1169,5.5925,0.0,150,0.6668,268.03,(0.825, -0.168, -4.534),(29.881, 1.602, -1.0),False,False,False,True
+# [18:43:51] [diag @ episode 114] avg_loss=0.0442 avg_mean_abs_q=26.2131 max_grad_norm=14.2317
+115,10.0267,6.7559,0.0,150,0.6618,270.67,(-0.215, 0.702, -2.644),(29.179, -0.777, -3.984),False,False,False,True
+# [18:46:29] [diag @ episode 115] avg_loss=0.0490 avg_mean_abs_q=26.4897 max_grad_norm=20.8562
+116,69.8929,12.9363,10.0,80,0.6592,272.12,(0.228, -1.361, -1.837),(28.684, 3.055, -1.0),True,False,False,False
+# [18:47:56] [diag @ episode 116] avg_loss=0.0395 avg_mean_abs_q=26.4248 max_grad_norm=10.9875
+117,2.8565,12.4436,10.0,150,0.6542,274.76,(-0.535, -1.421, -3.732),(28.542, -1.219, -4.618),False,False,False,True
+# [18:50:35] [diag @ episode 117] avg_loss=0.0444 avg_mean_abs_q=26.8095 max_grad_norm=22.5555
+118,10.8562,12.5676,10.0,150,0.6492,277.4,(0.594, -0.866, -4.408),(27.737, 2.985, -2.35),False,False,False,True
+# [18:53:13] [diag @ episode 118] avg_loss=0.0457 avg_mean_abs_q=26.7745 max_grad_norm=25.7470
+119,5.9838,13.1514,10.0,150,0.6442,280.02,(0.101, 0.853, -3.977),(28.239, 1.038, -2.981),False,False,False,True
+# [18:55:50] [diag @ episode 119] avg_loss=0.0403 avg_mean_abs_q=27.0105 max_grad_norm=16.4467
+120,9.2431,14.0898,10.0,150,0.6392,282.67,(1.158, 0.528, -3.561),(29.605, 4.113, -5.021),False,False,False,True
+# [18:58:30] [diag @ episode 120] avg_loss=0.0458 avg_mean_abs_q=27.1939 max_grad_norm=26.6301
+# [19:11:33] [greedy-eval @ episode 120] success_rate=0.0% over 5 episodes
+121,13.6682,14.1702,10.0,150,0.6342,298.35,(-1.351, 0.344, -4.316),(31.965, 3.33, -3.92),False,False,False,True
+# [19:14:10] [diag @ episode 121] avg_loss=0.0407 avg_mean_abs_q=27.3239 max_grad_norm=19.2624
+122,1.6296,13.0253,10.0,11,0.6338,298.63,(-0.712, -0.547, -2.673),(31.491, -4.051, -4.06),False,False,True,False
+# [19:14:27] [diag @ episode 122] avg_loss=0.0295 avg_mean_abs_q=28.0105 max_grad_norm=4.1750
+123,12.2066,14.048,10.0,150,0.6288,301.23,(-1.754, -0.175, -2.139),(27.334, 1.08, -1.0),False,False,False,True
+# [19:17:03] [diag @ episode 123] avg_loss=0.0523 avg_mean_abs_q=27.6058 max_grad_norm=19.7506
+124,6.3901,14.2754,10.0,150,0.6238,303.84,(1.134, -0.285, -3.161),(32.294, 0.769, -1.0),False,False,False,True
+# [19:19:40] [diag @ episode 124] avg_loss=0.0473 avg_mean_abs_q=27.7183 max_grad_norm=18.7608
+125,10.6324,14.3359,10.0,150,0.6188,306.46,(-0.003, -1.063, -3.354),(30.416, 0.57, -1.0),False,False,False,True
+# [19:22:17] [diag @ episode 125] avg_loss=0.0400 avg_mean_abs_q=27.9630 max_grad_norm=18.7061
+126,14.2772,8.7744,0.0,150,0.6138,309.08,(-1.353, -0.016, -3.618),(29.668, -2.553, -2.324),False,False,False,True
+# [19:24:54] [diag @ episode 126] avg_loss=0.0495 avg_mean_abs_q=28.0120 max_grad_norm=20.3286
+127,10.4369,9.5324,0.0,150,0.6088,311.65,(-0.696, 0.178, -2.259),(31.726, 1.547, -4.013),False,False,False,True
+# [19:27:28] [diag @ episode 127] avg_loss=0.0398 avg_mean_abs_q=27.9911 max_grad_norm=13.1397
+128,2.2355,8.6703,0.0,16,0.6083,312.02,(-0.28, -1.04, -3.325),(31.301, -1.35, -5.001),False,False,True,False
+# [19:27:51] [diag @ episode 128] avg_loss=0.0455 avg_mean_abs_q=28.0677 max_grad_norm=21.1873
+129,2.1933,8.2913,0.0,150,0.6033,314.61,(-1.129, -0.498, -1.958),(27.886, -2.861, -1.674),False,False,False,True
+# [19:30:26] [diag @ episode 129] avg_loss=0.0659 avg_mean_abs_q=28.2094 max_grad_norm=20.5926
+130,-0.8191,7.2851,0.0,150,0.5983,317.23,(0.756, 1.36, -3.543),(28.089, -3.574, -4.811),False,False,False,True
+# [19:33:03] [diag @ episode 130] avg_loss=0.0523 avg_mean_abs_q=28.3644 max_grad_norm=19.9877
+131,13.7133,7.2896,0.0,150,0.5933,319.84,(1.564, -0.202, -2.802),(32.856, -3.081, -5.399),False,False,False,True
+# [19:35:40] [diag @ episode 131] avg_loss=0.0528 avg_mean_abs_q=28.6497 max_grad_norm=13.5665
+132,11.9005,8.3167,0.0,104,0.5898,321.67,(1.367, 0.447, -2.976),(31.573, 1.42, -6.08),False,False,True,False
+# [19:37:30] [diag @ episode 132] avg_loss=0.0499 avg_mean_abs_q=28.6548 max_grad_norm=15.3052
+133,12.168,8.3128,0.0,150,0.5848,324.28,(1.308, -0.055, -2.452),(32.66, 2.258, -1.817),False,False,False,True
+# [19:40:06] [diag @ episode 133] avg_loss=0.0510 avg_mean_abs_q=28.7362 max_grad_norm=15.9247
+134,11.9809,8.8719,0.0,150,0.5798,326.9,(0.58, -0.388, -3.235),(30.21, -0.933, -1.0),False,False,False,True
+# [19:42:44] [diag @ episode 134] avg_loss=0.0498 avg_mean_abs_q=28.6295 max_grad_norm=17.3674
+135,2.791,8.0878,0.0,150,0.5748,329.5,(-1.0, -0.738, -3.244),(28.935, -0.023, -5.595),False,False,False,True
+# [19:45:20] [diag @ episode 135] avg_loss=0.0482 avg_mean_abs_q=28.8920 max_grad_norm=14.0682
+136,-1.3396,6.5261,0.0,150,0.5698,332.12,(1.138, -0.808, -4.25),(34.099, 2.119, -3.354),False,False,False,True
+# [19:47:56] [diag @ episode 136] avg_loss=0.0479 avg_mean_abs_q=28.9748 max_grad_norm=19.7947
+137,10.9108,6.5735,0.0,150,0.5648,334.71,(0.135, -0.408, -4.096),(29.955, 4.283, -1.0),False,False,False,True
+# [19:50:32] [diag @ episode 137] avg_loss=0.0576 avg_mean_abs_q=29.1500 max_grad_norm=18.4612
+138,3.8711,6.737,0.0,11,0.5644,334.99,(1.25, -0.911, -3.502),(29.641, -1.623, -1.0),False,False,True,False
+# [19:50:49] [diag @ episode 138] avg_loss=0.0447 avg_mean_abs_q=29.3135 max_grad_norm=10.4641
+139,-1.9899,6.3187,0.0,150,0.5594,337.62,(-0.168, -0.977, -3.92),(32.735, 1.41, -3.872),False,False,False,True
+# [19:53:26] [diag @ episode 139] avg_loss=0.0536 avg_mean_abs_q=29.3229 max_grad_norm=15.9473
+140,-1.4022,6.2604,0.0,12,0.559,337.92,(0.805, 1.361, -3.809),(28.419, -2.093, -1.0),False,False,True,False
+# [19:53:45] [diag @ episode 140] avg_loss=0.0601 avg_mean_abs_q=29.5756 max_grad_norm=6.2061
+# [20:06:46] [greedy-eval @ episode 140] success_rate=0.0% over 5 episodes
+141,2.7095,5.16,0.0,150,0.554,353.54,(1.53, 0.385, -3.431),(33.6, 2.048, -4.631),False,False,False,True
+# [20:09:22] [diag @ episode 141] avg_loss=0.0764 avg_mean_abs_q=29.5381 max_grad_norm=18.7516
+142,-0.2784,3.9421,0.0,150,0.549,356.15,(1.085, -1.168, -2.962),(31.773, 3.081, -1.0),False,False,False,True
+# [20:11:58] [diag @ episode 142] avg_loss=0.0705 avg_mean_abs_q=29.6116 max_grad_norm=22.0446
+143,1.9787,2.9232,0.0,13,0.5486,356.46,(-1.093, -1.049, -3.477),(27.398, -1.446, -1.34),False,False,True,False
+# [20:12:17] [diag @ episode 143] avg_loss=0.0623 avg_mean_abs_q=29.7018 max_grad_norm=16.6078
+144,-0.3838,1.6867,0.0,150,0.5436,359.08,(-1.045, -1.202, -3.675),(28.113, 1.594, -5.983),False,False,False,True
+# [20:14:54] [diag @ episode 144] avg_loss=0.0726 avg_mean_abs_q=29.6363 max_grad_norm=15.1718
+145,-1.0528,1.3023,0.0,15,0.5431,359.42,(0.72, 0.795, -2.274),(28.062, 0.544, -1.165),False,False,True,False
+# [20:15:14] [diag @ episode 145] avg_loss=0.0783 avg_mean_abs_q=29.6344 max_grad_norm=12.7950
+146,-0.8451,1.3518,0.0,21,0.5424,359.86,(-0.852, -0.519, -2.39),(30.111, -4.273, -3.606),False,False,True,False
+# [20:15:41] [diag @ episode 146] avg_loss=0.0765 avg_mean_abs_q=30.0036 max_grad_norm=15.3110
+147,3.2135,0.5821,0.0,150,0.5374,362.46,(-1.38, 0.562, -3.907),(27.983, 0.878, -5.327),False,False,False,True
+# [20:18:17] [diag @ episode 147] avg_loss=0.0855 avg_mean_abs_q=29.8976 max_grad_norm=21.6233
+148,-0.0249,0.1925,0.0,150,0.5324,365.03,(1.127, 0.059, -1.678),(28.407, 4.164, -2.464),False,False,False,True
+# [20:20:51] [diag @ episode 148] avg_loss=0.0757 avg_mean_abs_q=30.0619 max_grad_norm=21.8984
+149,-2.3147,0.16,0.0,150,0.5274,367.65,(-0.901, -0.499, -3.63),(27.206, -3.618, -4.285),False,False,False,True
+# [20:23:29] [diag @ episode 149] avg_loss=0.0751 avg_mean_abs_q=30.2594 max_grad_norm=21.6716
+150,0.3686,0.3371,0.0,150,0.5224,370.25,(-0.289, 0.248, -4.866),(30.35, 1.152, -1.0),False,False,False,True
+# [20:26:04] [diag @ episode 150] avg_loss=0.0665 avg_mean_abs_q=30.0454 max_grad_norm=19.4709
+151,0.1024,0.0764,0.0,8,0.5221,370.48,(1.063, -1.176, -2.181),(30.13, -0.7, -2.906),False,False,True,False
+# [20:26:18] [diag @ episode 151] avg_loss=0.0887 avg_mean_abs_q=30.5666 max_grad_norm=9.3537
+152,2.2928,0.3335,0.0,150,0.5171,373.08,(-0.659, -1.017, -2.597),(31.661, 1.569, -6.181),False,False,False,True
+# [20:28:54] [diag @ episode 152] avg_loss=0.0712 avg_mean_abs_q=30.5370 max_grad_norm=26.6671
+153,0.0705,0.1427,0.0,150,0.5121,375.69,(-1.106, -1.496, -3.489),(32.504, 2.018, -5.434),False,False,False,True
+# [20:31:31] [diag @ episode 153] avg_loss=0.0673 avg_mean_abs_q=30.5636 max_grad_norm=30.3711
+154,2.5923,0.4403,0.0,150,0.5071,378.29,(-1.96, -0.087, -3.034),(33.98, 2.455, -4.558),False,False,False,True
+# [20:34:07] [diag @ episode 154] avg_loss=0.0680 avg_mean_abs_q=30.6935 max_grad_norm=24.2360
+155,-0.1727,0.5283,0.0,150,0.5021,380.89,(-0.689, 1.68, -3.313),(28.786, 3.884, -1.316),False,False,False,True
+# [20:36:43] [diag @ episode 155] avg_loss=0.0670 avg_mean_abs_q=30.6645 max_grad_norm=21.9370
+156,-2.8842,0.3244,0.0,150,0.4971,383.46,(-0.696, -0.321, -2.153),(27.187, 1.52, -6.54),False,False,False,True
+# [20:39:17] [diag @ episode 156] avg_loss=0.0667 avg_mean_abs_q=31.0315 max_grad_norm=23.9635
+157,-2.5132,-0.2483,0.0,21,0.4964,383.91,(0.427, 1.678, -2.355),(31.045, -1.302, -1.0),False,False,True,False
+# [20:39:44] [diag @ episode 157] avg_loss=0.0535 avg_mean_abs_q=30.7494 max_grad_norm=11.3671
+158,1.05,-0.1408,0.0,150,0.4914,386.51,(-1.53, -1.256, -2.731),(32.505, -1.294, -5.62),False,False,False,True
+# [20:42:20] [diag @ episode 158] avg_loss=0.0738 avg_mean_abs_q=31.0817 max_grad_norm=32.7168
+159,14.914,1.5821,0.0,112,0.4877,388.5,(-0.793, 0.246, -3.84),(26.396, 2.732, -1.913),False,False,True,False
+# [20:44:19] [diag @ episode 159] avg_loss=0.0788 avg_mean_abs_q=31.3410 max_grad_norm=24.1016
+160,-1.0609,1.4391,0.0,150,0.4827,391.12,(0.58, -0.895, -4.335),(29.017, 2.036, -3.34),False,False,False,True
+# [20:46:56] [diag @ episode 160] avg_loss=0.0659 avg_mean_abs_q=31.4550 max_grad_norm=25.6746
+# [20:59:56] [greedy-eval @ episode 160] success_rate=0.0% over 5 episodes
+161,-1.8935,1.2395,0.0,150,0.4777,406.73,(0.542, 0.837, -4.052),(32.834, 1.088, -6.407),False,False,False,True
+# [21:02:33] [diag @ episode 161] avg_loss=0.0673 avg_mean_abs_q=31.5950 max_grad_norm=36.9222
+162,-6.144,0.3958,0.0,24,0.4769,407.23,(-1.305, 1.484, -2.833),(34.439, 0.795, -1.578),False,False,True,False
+# [21:03:03] [diag @ episode 162] avg_loss=0.0564 avg_mean_abs_q=31.3453 max_grad_norm=10.0092
+163,-9.1808,-0.5293,0.0,47,0.4753,408.13,(1.291, -0.281, -3.929),(33.531, -3.442, -3.64),False,False,True,False
+# [21:03:57] [diag @ episode 163] avg_loss=0.0593 avg_mean_abs_q=31.1375 max_grad_norm=22.6541
+164,-0.919,-0.8804,0.0,150,0.4703,410.72,(0.231, 1.077, -2.202),(27.164, 2.309, -3.38),False,False,False,True
+# [21:06:33] [diag @ episode 164] avg_loss=0.0704 avg_mean_abs_q=31.5786 max_grad_norm=28.2013
+165,-16.0098,-2.4641,0.0,31,0.4693,411.33,(-1.412, -0.404, -2.543),(31.005, 2.573, -6.114),False,False,True,False
+# [21:07:09] [diag @ episode 165] avg_loss=0.0569 avg_mean_abs_q=31.6933 max_grad_norm=12.2869
+166,5.9941,-1.5763,0.0,135,0.4648,413.68,(0.903, 0.446, -2.554),(28.743, 4.147, -2.871),False,False,True,False
+# [21:09:30] [diag @ episode 166] avg_loss=0.0715 avg_mean_abs_q=31.9435 max_grad_norm=35.0021
+167,-3.9891,-1.7239,0.0,150,0.4598,416.28,(-0.85, -1.679, -2.666),(26.511, -1.033, -1.0),False,False,False,True
+# [21:12:06] [diag @ episode 167] avg_loss=0.0676 avg_mean_abs_q=31.7271 max_grad_norm=30.8211
+168,0.1464,-1.8142,0.0,150,0.4548,418.89,(-0.73, 0.606, -3.07),(33.5, 0.754, -3.347),False,False,False,True
+# [21:14:43] [diag @ episode 168] avg_loss=0.0712 avg_mean_abs_q=31.9958 max_grad_norm=23.3091
+169,-3.1289,-3.6185,0.0,150,0.4498,421.46,(0.054, -0.327, -1.677),(26.805, -0.458, -2.394),False,False,False,True
+# [21:17:17] [diag @ episode 169] avg_loss=0.0662 avg_mean_abs_q=31.6118 max_grad_norm=25.7272
+170,-1.3073,-3.6432,0.0,150,0.4448,424.06,(0.322, 0.355, -4.884),(32.4, 3.364, -5.577),False,False,False,True
+# [21:19:53] [diag @ episode 170] avg_loss=0.0720 avg_mean_abs_q=31.7221 max_grad_norm=29.8752
+171,-8.5596,-4.3098,0.0,150,0.4398,426.68,(0.741, -0.638, -3.912),(29.582, -0.722, -2.148),False,False,False,True
+# [21:22:30] [diag @ episode 171] avg_loss=0.0636 avg_mean_abs_q=31.8608 max_grad_norm=28.3982
+172,-1.9589,-3.8913,0.0,150,0.4348,429.3,(-1.273, 0.523, -4.376),(31.701, -0.299, -1.146),False,False,False,True
+# [21:25:07] [diag @ episode 172] avg_loss=0.0577 avg_mean_abs_q=31.9336 max_grad_norm=21.8787
+173,0.8537,-2.8878,0.0,97,0.4316,431.02,(0.434, -1.557, -3.642),(32.646, -0.337, -5.725),False,False,True,False
+# [21:26:51] [diag @ episode 173] avg_loss=0.0739 avg_mean_abs_q=32.1643 max_grad_norm=53.6325
+174,-6.3815,-3.4341,0.0,150,0.4266,433.63,(-1.147, -0.614, -3.314),(29.287, -3.858, -1.0),False,False,False,True
+# [21:29:27] [diag @ episode 174] avg_loss=0.0624 avg_mean_abs_q=31.9618 max_grad_norm=26.4606
+175,3.1608,-1.517,0.0,150,0.4216,436.24,(0.923, -1.009, -4.205),(32.45, -2.965, -2.486),False,False,False,True
+# [21:32:04] [diag @ episode 175] avg_loss=0.0600 avg_mean_abs_q=32.2400 max_grad_norm=27.8788
+176,-0.6933,-2.1858,0.0,150,0.4166,438.84,(1.45, -0.341, -3.336),(26.425, -0.124, -4.343),False,False,False,True
+# [21:34:40] [diag @ episode 176] avg_loss=0.0642 avg_mean_abs_q=32.1777 max_grad_norm=35.3368
+177,-4.9899,-2.2859,0.0,150,0.4116,441.44,(-1.544, -0.233, -1.928),(27.84, 2.134, -1.0),False,False,False,True
+# [21:37:16] [diag @ episode 177] avg_loss=0.0651 avg_mean_abs_q=32.1863 max_grad_norm=26.7184
+178,-6.7853,-2.979,0.0,150,0.4066,444.03,(0.325, -1.297, -1.804),(29.109, -0.536, -4.393),False,False,False,True
+# [21:39:51] [diag @ episode 178] avg_loss=0.0544 avg_mean_abs_q=32.1956 max_grad_norm=21.2534
+179,-11.3654,-3.8027,0.0,150,0.4016,446.65,(1.232, -0.632, -4.331),(26.69, 0.522, -2.433),False,False,False,True
+# [21:42:28] [diag @ episode 179] avg_loss=0.0613 avg_mean_abs_q=32.5399 max_grad_norm=44.4177
+180,-9.7878,-4.6507,0.0,114,0.3978,448.66,(1.345, 0.364, -4.145),(30.059, 0.228, -5.25),False,False,True,False
+# [21:44:29] [diag @ episode 180] avg_loss=0.0542 avg_mean_abs_q=32.0698 max_grad_norm=30.7693
+# [21:57:25] [greedy-eval @ episode 180] success_rate=0.0% over 5 episodes
+181,-9.5027,-4.745,0.0,150,0.3928,464.2,(0.372, -0.63, -4.763),(26.518, -3.083, -1.216),False,False,False,True
+# [22:00:01] [diag @ episode 181] avg_loss=0.0612 avg_mean_abs_q=31.9285 max_grad_norm=36.9656
+182,-9.8582,-5.535,0.0,150,0.3878,466.8,(-0.356, -1.246, -2.831),(28.261, -0.986, -6.641),False,False,False,True
+# [22:02:37] [diag @ episode 182] avg_loss=0.0645 avg_mean_abs_q=32.1652 max_grad_norm=21.8556
+183,-11.816,-6.8019,0.0,150,0.3828,469.39,(1.303, -0.865, -2.096),(27.237, -0.789, -1.0),False,False,False,True
+# [22:05:13] [diag @ episode 183] avg_loss=0.0555 avg_mean_abs_q=32.2502 max_grad_norm=35.3401
+184,69.3116,0.7674,10.0,80,0.3801,470.83,(1.325, -0.901, -2.923),(28.867, -3.844, -2.687),True,False,False,False
+# [22:06:39] [diag @ episode 184] avg_loss=0.0502 avg_mean_abs_q=32.4486 max_grad_norm=24.5981
+185,-9.4464,-0.4934,10.0,150,0.3751,473.42,(0.756, -1.012, -1.806),(31.948, -1.34, -6.411),False,False,False,True
+# [22:09:15] [diag @ episode 185] avg_loss=0.0631 avg_mean_abs_q=32.4073 max_grad_norm=26.7048
+186,-3.7246,-0.7965,10.0,49,0.3735,474.3,(-0.825, 0.164, -2.463),(31.211, 3.568, -4.657),False,False,True,False
+# [22:10:08] [diag @ episode 186] avg_loss=0.0617 avg_mean_abs_q=32.1654 max_grad_norm=22.0156
+187,-8.3354,-1.131,10.0,142,0.3687,476.79,(-0.547, 1.129, -4.367),(27.067, -0.048, -1.0),False,False,True,False
+# [22:12:37] [diag @ episode 187] avg_loss=0.0608 avg_mean_abs_q=32.1553 max_grad_norm=32.7545
+188,-7.1169,-1.1642,10.0,150,0.3637,479.36,(0.701, 0.534, -1.939),(33.714, 0.352, -4.994),False,False,False,True
+# [22:15:11] [diag @ episode 188] avg_loss=0.0611 avg_mean_abs_q=32.3142 max_grad_norm=27.7070
+189,0.3392,0.0063,10.0,29,0.3628,479.94,(-1.072, 1.233, -2.778),(27.473, 1.8, -1.0),False,False,True,False
+# [22:15:46] [diag @ episode 189] avg_loss=0.0744 avg_mean_abs_q=32.3603 max_grad_norm=25.3446
+190,-10.2779,-0.0427,10.0,150,0.3578,482.54,(0.452, 0.891, -2.562),(30.851, -3.068, -1.0),False,False,False,True
+# [22:18:22] [diag @ episode 190] avg_loss=0.0625 avg_mean_abs_q=32.2084 max_grad_norm=41.5356
+191,-3.6719,0.5403,10.0,87,0.3549,484.1,(-0.999, -0.288, -3.332),(31.275, 2.814, -4.699),False,False,True,False
+# [22:19:56] [diag @ episode 191] avg_loss=0.0602 avg_mean_abs_q=32.4497 max_grad_norm=36.3202
+192,-12.1975,0.3064,10.0,150,0.3499,486.67,(-0.51, -0.067, -1.942),(26.422, -2.518, -5.07),False,False,False,True
+# [22:22:30] [diag @ episode 192] avg_loss=0.0595 avg_mean_abs_q=32.2400 max_grad_norm=20.0580
+193,-3.3805,1.15,10.0,65,0.3477,487.88,(-0.555, -0.831, -4.289),(30.777, 3.49, -1.0),False,False,True,False
+# [22:23:42] [diag @ episode 193] avg_loss=0.0596 avg_mean_abs_q=32.2331 max_grad_norm=19.0354
+194,0.4165,-5.7395,0.0,24,0.3469,488.35,(-0.015, 0.126, -1.519),(31.913, 1.712, -1.0),False,False,True,False
+# [22:24:10] [diag @ episode 194] avg_loss=0.0735 avg_mean_abs_q=32.1177 max_grad_norm=16.6589
+195,-11.8,-5.9749,0.0,150,0.3419,490.91,(0.292, 0.25, -1.666),(27.668, -0.953, -1.052),False,False,True,True
+# [22:26:44] [diag @ episode 195] avg_loss=0.0642 avg_mean_abs_q=32.5119 max_grad_norm=32.2850
+196,-2.2224,-5.8247,0.0,8,0.3416,491.14,(1.382, -0.285, -1.892),(30.492, 2.429, -3.172),False,False,True,False
+# [22:26:58] [diag @ episode 196] avg_loss=0.0486 avg_mean_abs_q=32.1982 max_grad_norm=17.9014
+197,-6.5372,-5.6449,0.0,114,0.3378,493.14,(-1.414, -0.433, -3.049),(30.199, -0.894, -1.81),False,False,True,False
+# [22:28:58] [diag @ episode 197] avg_loss=0.0756 avg_mean_abs_q=32.3811 max_grad_norm=28.9776
+198,-9.4445,-5.8776,0.0,120,0.3338,495.25,(-0.304, 0.954, -3.195),(29.237, -4.339, -1.66),False,False,True,False
+# [22:31:04] [diag @ episode 198] avg_loss=0.0799 avg_mean_abs_q=32.3660 max_grad_norm=30.6015
+199,-11.8641,-7.0979,0.0,138,0.3292,497.64,(0.233, -0.455, -3.588),(28.208, -2.748, -2.816),False,False,True,False
+# [22:33:28] [diag @ episode 199] avg_loss=0.0785 avg_mean_abs_q=32.3155 max_grad_norm=28.4235
+200,1.8331,-5.8868,0.0,8,0.329,497.87,(-0.792, -0.49, -2.515),(27.181, -1.542, -2.725),False,False,True,False
+# [22:33:41] [diag @ episode 200] avg_loss=0.0815 avg_mean_abs_q=32.2883 max_grad_norm=12.8658
+# [22:40:17] [greedy-eval @ episode 200] success_rate=0.0% over 5 episodes
+201,-1.2323,-5.6429,0.0,14,0.3285,504.78,(-0.129, 0.646, -3.821),(32.812, 1.997, -4.648),False,False,True,False
+# [22:40:36] [diag @ episode 201] avg_loss=0.0920 avg_mean_abs_q=32.6808 max_grad_norm=20.2896
+202,-3.5368,-4.7768,0.0,91,0.3255,506.38,(-0.121, -0.391, -2.951),(32.174, -0.898, -1.419),False,False,True,False
+# [22:42:12] [diag @ episode 202] avg_loss=0.0988 avg_mean_abs_q=32.5715 max_grad_norm=20.6820
+203,-8.3329,-5.2721,0.0,69,0.3232,507.6,(-0.295, 0.83, -2.491),(27.81, 1.041, -3.96),False,False,True,False
+# [22:43:25] [diag @ episode 203] avg_loss=0.0981 avg_mean_abs_q=32.3763 max_grad_norm=27.9089
+204,-10.8962,-6.4033,0.0,150,0.3182,510.19,(-0.119, -0.344, -3.602),(28.759, 0.057, -4.595),False,False,False,True
+# [22:46:01] [diag @ episode 204] avg_loss=0.0880 avg_mean_abs_q=32.3281 max_grad_norm=24.9714
+205,0.6645,-5.1569,0.0,7,0.3179,510.41,(0.116, 1.407, -3.887),(33.947, 1.308, -1.074),False,False,True,False
+# [22:46:14] [diag @ episode 205] avg_loss=0.0992 avg_mean_abs_q=32.0324 max_grad_norm=14.3874
+206,-5.4538,-5.48,0.0,26,0.3171,510.95,(-0.173, -1.583, -3.752),(25.146, 0.528, -3.444),False,False,True,False
+# [22:46:47] [diag @ episode 206] avg_loss=0.0847 avg_mean_abs_q=32.8497 max_grad_norm=22.0476
+207,-15.3257,-6.3589,0.0,150,0.3121,513.56,(1.711, -0.809, -3.542),(28.77, 0.264, -1.0),False,False,False,True
+# [22:49:23] [diag @ episode 207] avg_loss=0.0865 avg_mean_abs_q=32.5434 max_grad_norm=24.7586
+208,-2.9126,-5.7057,0.0,36,0.3109,514.23,(-0.503, -0.307, -1.778),(30.646, 1.573, -1.0),False,False,True,False
+# [22:50:03] [diag @ episode 208] avg_loss=0.1003 avg_mean_abs_q=32.6835 max_grad_norm=26.9068
+209,-2.0244,-4.7217,0.0,25,0.31,514.76,(-0.711, 0.159, -3.492),(28.424, 0.667, -3.527),False,False,True,False
+# [22:50:35] [diag @ episode 209] avg_loss=0.0930 avg_mean_abs_q=32.4561 max_grad_norm=29.0109
+210,-12.3336,-6.1384,0.0,150,0.305,517.36,(-0.335, -1.562, -3.318),(26.154, -1.536, -5.207),False,False,False,True
+# [22:53:11] [diag @ episode 210] avg_loss=0.0975 avg_mean_abs_q=32.7526 max_grad_norm=37.7741
+211,-4.5271,-6.4678,0.0,52,0.3033,518.33,(-1.919, 0.275, -2.571),(26.141, 0.694, -4.868),False,False,True,False
+# [22:54:09] [diag @ episode 211] avg_loss=0.0860 avg_mean_abs_q=32.7235 max_grad_norm=36.4738
+212,-6.5739,-6.7716,0.0,133,0.2989,520.65,(-1.453, -0.46, -2.965),(34.39, -2.122, -2.299),False,False,True,False
+# [22:56:29] [diag @ episode 212] avg_loss=0.0809 avg_mean_abs_q=32.8026 max_grad_norm=22.2286
+213,0.0322,-5.9351,0.0,14,0.2984,520.99,(-0.871, -0.262, -3.087),(30.116, 0.225, -7.57),False,False,True,False
+# [22:56:49] [diag @ episode 213] avg_loss=0.0968 avg_mean_abs_q=33.0001 max_grad_norm=12.3344
+214,-10.2159,-5.867,0.0,93,0.2953,522.63,(-0.142, -0.133, -3.607),(30.065, -4.684, -3.52),False,False,True,False
+# [22:58:27] [diag @ episode 214] avg_loss=0.0910 avg_mean_abs_q=32.7128 max_grad_norm=27.3803
+215,-12.8678,-7.2203,0.0,150,0.2903,525.23,(-1.505, -0.263, -2.589),(28.221, 1.17, -2.237),False,False,False,True
+# [23:01:03] [diag @ episode 215] avg_loss=0.0934 avg_mean_abs_q=32.9596 max_grad_norm=22.3105
+216,-10.9551,-7.7704,0.0,150,0.2853,527.8,(0.224, -0.994, -1.379),(26.164, 2.249, -5.257),False,False,False,True
+# [23:03:37] [diag @ episode 216] avg_loss=0.0842 avg_mean_abs_q=32.8791 max_grad_norm=28.4710
+217,-4.7219,-6.71,0.0,36,0.2841,528.51,(1.267, 0.664, -4.265),(30.633, -1.536, -1.0),False,False,True,False
+# [23:04:20] [diag @ episode 217] avg_loss=0.0769 avg_mean_abs_q=32.8724 max_grad_norm=21.3799
+218,-10.363,-7.4551,0.0,93,0.281,530.2,(0.125, 0.867, -3.555),(30.991, 0.574, -3.872),False,False,True,False
+# [23:06:01] [diag @ episode 218] avg_loss=0.0933 avg_mean_abs_q=32.9644 max_grad_norm=28.7083
+219,-13.8839,-8.641,0.0,150,0.276,532.79,(0.341, -0.514, -4.135),(34.014, 0.085, -1.941),False,False,False,True
+# [23:08:37] [diag @ episode 219] avg_loss=0.0832 avg_mean_abs_q=32.9361 max_grad_norm=26.1470
+220,-7.5518,-8.1628,0.0,84,0.2732,534.3,(1.434, 0.929, -3.791),(29.167, 2.887, -6.715),False,False,True,False
+# [23:10:07] [diag @ episode 220] avg_loss=0.0922 avg_mean_abs_q=33.2182 max_grad_norm=25.6966
+# [23:21:31] [greedy-eval @ episode 220] success_rate=0.0% over 5 episodes
+221,-11.9642,-8.9065,0.0,150,0.2682,548.27,(-0.19, -0.47, -1.686),(29.378, -1.13, -1.0),False,False,False,True
+# [23:24:06] [diag @ episode 221] avg_loss=0.0828 avg_mean_abs_q=33.1053 max_grad_norm=35.8878
+222,14.7405,-6.7751,0.0,94,0.2651,549.95,(0.489, 0.558, -3.79),(29.958, -4.668, -3.926),False,False,True,False
+# [23:25:46] [diag @ episode 222] avg_loss=0.0829 avg_mean_abs_q=33.0745 max_grad_norm=20.4617
+223,-8.2199,-7.6003,0.0,18,0.2645,550.36,(0.611, 1.488, -4.082),(30.924, 0.195, -7.779),False,False,True,False
+# [23:26:11] [diag @ episode 223] avg_loss=0.0917 avg_mean_abs_q=33.4600 max_grad_norm=18.0141
+224,15.979,-4.9808,0.0,38,0.2632,551.11,(1.016, 0.809, -4.484),(26.612, -1.03, -3.489),False,False,True,False
+# [23:26:56] [diag @ episode 224] avg_loss=0.1092 avg_mean_abs_q=33.3312 max_grad_norm=29.1595
+225,0.0759,-3.6864,0.0,150,0.2582,553.7,(0.476, -1.249, -2.745),(29.592, 1.518, -4.604),False,False,False,True
+# [23:29:32] [diag @ episode 225] avg_loss=0.0889 avg_mean_abs_q=33.1944 max_grad_norm=31.7890
+226,-14.6996,-4.0609,0.0,150,0.2532,556.33,(0.579, 0.69, -3.818),(30.191, -0.98, -1.0),False,False,False,True
+# [23:32:09] [diag @ episode 226] avg_loss=0.0976 avg_mean_abs_q=33.0148 max_grad_norm=24.9881
+227,-13.5383,-4.9425,0.0,150,0.2482,558.93,(-0.317, -1.622, -2.38),(26.208, 0.916, -4.25),False,False,False,True
+# [23:34:45] [diag @ episode 227] avg_loss=0.0929 avg_mean_abs_q=33.3615 max_grad_norm=24.0017
+228,-7.9236,-4.6986,0.0,150,0.2432,561.52,(-0.958, -0.116, -2.426),(30.017, -1.899, -1.465),False,False,False,True
+# [23:37:21] [diag @ episode 228] avg_loss=0.0980 avg_mean_abs_q=33.3097 max_grad_norm=24.5662
+229,11.9147,-2.1187,0.0,113,0.2394,563.51,(1.161, -0.335, -3.571),(28.229, 3.763, -5.553),False,False,True,False
+# [23:39:20] [diag @ episode 229] avg_loss=0.0958 avg_mean_abs_q=33.2818 max_grad_norm=18.8094
+230,-9.2613,-2.2897,0.0,150,0.2344,566.12,(0.942, -0.152, -2.941),(29.013, 2.101, -3.514),False,False,False,True
+# [23:41:56] [diag @ episode 230] avg_loss=0.0954 avg_mean_abs_q=33.6513 max_grad_norm=19.5659
+231,-2.104,-1.3037,0.0,13,0.234,566.44,(0.766, 1.099, -3.95),(31.114, 1.176, -7.383),False,False,True,False
+# [23:42:16] [diag @ episode 231] avg_loss=0.0837 avg_mean_abs_q=33.8007 max_grad_norm=12.2987
+232,0.8441,-2.6933,0.0,18,0.2334,566.84,(0.591, -0.968, -2.891),(32.451, 1.552, -1.752),False,False,True,False
+# [23:42:40] [diag @ episode 232] avg_loss=0.1031 avg_mean_abs_q=33.8646 max_grad_norm=19.3022
+233,-13.2983,-3.2011,0.0,150,0.2284,569.44,(0.599, -0.187, -3.573),(28.167, -0.581, -4.898),False,False,False,True
+# [23:45:16] [diag @ episode 233] avg_loss=0.1144 avg_mean_abs_q=33.7093 max_grad_norm=26.1670
+234,-16.4827,-6.4473,0.0,150,0.2234,572.05,(1.578, 0.281, -3.676),(29.661, -2.38, -2.326),False,False,False,True
+# [23:47:52] [diag @ episode 234] avg_loss=0.1087 avg_mean_abs_q=33.7421 max_grad_norm=31.2412
+235,14.3164,-5.0233,0.0,50,0.2217,572.99,(-0.54, 1.256, -3.688),(32.711, 1.084, -1.0),False,False,True,False
+# [23:48:49] [diag @ episode 235] avg_loss=0.1059 avg_mean_abs_q=33.9654 max_grad_norm=17.9107
+236,-10.6424,-4.6175,0.0,150,0.2167,575.59,(-1.249, -1.248, -3.051),(29.778, -3.401, -1.564),False,False,False,True
+# [23:51:25] [diag @ episode 236] avg_loss=0.1101 avg_mean_abs_q=33.8660 max_grad_norm=22.6526
+237,12.3751,-2.0262,0.0,36,0.2155,576.29,(-1.554, 1.126, -2.856),(28.919, -1.926, -2.282),False,False,True,False
+# [23:52:07] [diag @ episode 237] avg_loss=0.1205 avg_mean_abs_q=33.9072 max_grad_norm=29.3114
+238,13.1323,0.0794,0.0,29,0.2146,576.84,(-0.009, -0.507, -1.261),(30.281, -1.835, -1.0),False,False,True,False
+# [23:52:40] [diag @ episode 238] avg_loss=0.1075 avg_mean_abs_q=33.9222 max_grad_norm=23.7709
+239,9.3823,-0.1738,0.0,24,0.2138,577.36,(0.988, 0.94, -4.428),(27.314, -3.51, -2.626),False,False,True,False
+# [23:53:11] [diag @ episode 239] avg_loss=0.1143 avg_mean_abs_q=34.3991 max_grad_norm=30.2865
+240,9.6836,1.7207,0.0,15,0.2133,577.71,(0.752, 1.562, -2.262),(26.566, -1.808, -4.16),False,False,True,False
+# [23:53:32] [diag @ episode 240] avg_loss=0.1301 avg_mean_abs_q=33.9173 max_grad_norm=14.6115
+# [00:04:17] [greedy-eval @ episode 240] success_rate=0.0% over 5 episodes
+241,6.081,2.5391,0.0,82,0.2105,589.92,(-1.417, -0.189, -2.716),(28.136, 3.234, -4.413),False,False,True,False
+# [00:05:44] [diag @ episode 241] avg_loss=0.1156 avg_mean_abs_q=33.8782 max_grad_norm=26.9224
+242,7.8545,3.2402,0.0,96,0.2073,591.59,(-0.26, -0.055, -1.289),(30.073, -0.705, -2.496),False,False,True,False
+# [00:07:25] [diag @ episode 242] avg_loss=0.1318 avg_mean_abs_q=34.2021 max_grad_norm=26.4007
+243,10.5539,5.6254,0.0,21,0.2066,592.03,(0.287, 1.442, -1.737),(28.786, -3.794, -3.591),False,False,True,False
+# [00:07:51] [diag @ episode 243] avg_loss=0.0932 avg_mean_abs_q=34.6503 max_grad_norm=12.8897
+244,-2.0809,7.0656,0.0,150,0.2016,594.63,(-0.952, 1.49, -3.305),(27.744, -2.204, -6.144),False,False,False,True
+# [00:10:27] [diag @ episode 244] avg_loss=0.1322 avg_mean_abs_q=34.2896 max_grad_norm=35.3833
+245,1.6911,5.8031,0.0,8,0.2014,594.9,(-0.522, 0.658, -3.068),(30.048, -0.085, -2.764),False,False,True,False
+# [00:10:43] [diag @ episode 245] avg_loss=0.1461 avg_mean_abs_q=34.8074 max_grad_norm=25.4143
+246,2.2499,7.0923,0.0,16,0.2008,595.26,(-1.123, 0.526, -2.419),(30.491, 2.496, -3.805),False,False,True,False
+# [00:11:05] [diag @ episode 246] avg_loss=0.1214 avg_mean_abs_q=34.1771 max_grad_norm=18.0406
+247,-0.9108,5.7637,0.0,14,0.2004,595.6,(1.41, -1.089, -2.489),(32.407, 0.16, -2.038),False,False,True,False
+# [00:11:25] [diag @ episode 247] avg_loss=0.1497 avg_mean_abs_q=33.9127 max_grad_norm=20.8760
+248,5.8909,5.0396,0.0,25,0.2,596.12,(-0.564, -0.543, -2.731),(28.136, 1.27, -6.923),False,False,True,False
+# [00:11:57] [diag @ episode 248] avg_loss=0.1708 avg_mean_abs_q=34.3622 max_grad_norm=20.9812
+249,-0.9338,4.0079,0.0,14,0.2,596.44,(1.268, -0.237, -1.769),(31.608, 1.543, -1.6),False,False,True,False
+# [00:12:16] [diag @ episode 249] avg_loss=0.1498 avg_mean_abs_q=34.6181 max_grad_norm=27.4896
+250,11.1277,4.1524,0.0,41,0.2,597.23,(-0.619, 0.9, -3.226),(26.708, 0.43, -4.379),False,False,True,False
+# [00:13:03] [diag @ episode 250] avg_loss=0.1606 avg_mean_abs_q=34.3293 max_grad_norm=26.8415
+251,11.3194,4.6762,0.0,22,0.2,597.69,(1.629, -0.942, -2.702),(27.255, -1.15, -1.0),False,False,True,False
+# [00:13:31] [diag @ episode 251] avg_loss=0.1509 avg_mean_abs_q=34.4915 max_grad_norm=19.8979
+252,8.9203,4.7828,0.0,22,0.2,598.15,(1.153, 0.439, -2.717),(30.837, -3.635, -3.126),False,False,True,False
+# [00:13:59] [diag @ episode 252] avg_loss=0.1717 avg_mean_abs_q=34.3524 max_grad_norm=17.7928
+253,-0.1306,3.7143,0.0,12,0.2,598.45,(-0.692, -1.407, -2.84),(26.28, 1.522, -1.488),False,False,True,False
+# [00:14:17] [diag @ episode 253] avg_loss=0.1885 avg_mean_abs_q=34.6679 max_grad_norm=14.9536
+254,4.5486,4.3773,0.0,121,0.2,600.57,(-0.246, -0.968, -3.075),(29.012, 0.857, -1.332),False,False,True,False
+# [00:16:24] [diag @ episode 254] avg_loss=0.1702 avg_mean_abs_q=34.3431 max_grad_norm=31.6143
+255,4.7876,4.6869,0.0,59,0.2,601.65,(-0.04, 1.121, -2.892),(29.043, 2.899, -1.944),False,False,True,False
+# [00:17:29] [diag @ episode 255] avg_loss=0.1681 avg_mean_abs_q=34.3335 max_grad_norm=17.8889
+256,7.664,5.2283,0.0,36,0.2,602.32,(0.25, -0.789, -2.144),(29.137, 0.163, -5.39),False,False,True,False
+# [00:18:09] [diag @ episode 256] avg_loss=0.1763 avg_mean_abs_q=34.5672 max_grad_norm=23.4493
+257,5.9583,5.9152,0.0,10,0.2,602.59,(1.657, 0.033, -3.189),(28.92, 1.642, -1.412),False,False,True,False
+# [00:18:25] [diag @ episode 257] avg_loss=0.2182 avg_mean_abs_q=34.6125 max_grad_norm=22.2110
+258,1.7014,5.4963,0.0,29,0.2,603.17,(0.424, -1.249, -2.759),(26.341, 2.759, -3.079),False,False,True,False
+# [00:18:59] [diag @ episode 258] avg_loss=0.1620 avg_mean_abs_q=34.6370 max_grad_norm=25.7637
+259,6.7953,6.2692,0.0,25,0.2,603.68,(1.272, 0.102, -2.742),(30.265, -0.287, -5.208),False,False,True,False
+# [00:19:30] [diag @ episode 259] avg_loss=0.1755 avg_mean_abs_q=34.8666 max_grad_norm=29.9370
+260,6.8515,5.8416,0.0,26,0.2,604.22,(0.744, 0.423, -4.335),(26.931, 2.565, -1.571),False,False,True,False
+# [00:20:02] [diag @ episode 260] avg_loss=0.1670 avg_mean_abs_q=34.1406 max_grad_norm=26.3798
+# [00:22:20] [greedy-eval @ episode 260] success_rate=0.0% over 5 episodes
+261,4.4582,5.1555,0.0,34,0.2,607.14,(0.721, 0.403, -1.989),(27.987, -1.118, -5.298),False,False,True,False
+# [00:22:58] [diag @ episode 261] avg_loss=0.1534 avg_mean_abs_q=34.4983 max_grad_norm=20.2729
+262,7.4995,5.0134,0.0,22,0.2,607.6,(-1.129, 1.033, -3.194),(27.567, 1.677, -2.878),False,False,True,False
+# [00:23:26] [diag @ episode 262] avg_loss=0.2024 avg_mean_abs_q=34.6689 max_grad_norm=17.1613
+263,5.3771,5.5641,0.0,36,0.2,608.3,(0.387, -1.001, -2.643),(27.54, 0.188, -1.988),False,False,True,False
+# [00:24:07] [diag @ episode 263] avg_loss=0.1840 avg_mean_abs_q=34.5411 max_grad_norm=23.5124
+264,5.912,5.7005,0.0,23,0.2,608.75,(-0.348, 0.099, -2.514),(27.805, -1.075, -6.272),False,False,True,False
+# [00:24:34] [diag @ episode 264] avg_loss=0.1707 avg_mean_abs_q=34.4729 max_grad_norm=23.3672
+265,9.092,6.1309,0.0,27,0.2,609.32,(0.718, 0.31, -3.727),(33.661, -2.248, -1.655),False,False,True,False
+# [00:25:08] [diag @ episode 265] avg_loss=0.1547 avg_mean_abs_q=34.7704 max_grad_norm=25.6250
+266,7.9376,6.1583,0.0,20,0.2,609.75,(-0.434, 0.901, -2.977),(30.956, -0.532, -7.69),False,False,True,False
+# [00:25:34] [diag @ episode 266] avg_loss=0.1864 avg_mean_abs_q=34.8354 max_grad_norm=19.1402
+267,-1.8133,5.3811,0.0,18,0.2,610.17,(1.072, -0.305, -3.919),(31.291, 3.078, -4.466),False,False,True,False
+# [00:25:59] [diag @ episode 267] avg_loss=0.2000 avg_mean_abs_q=34.8071 max_grad_norm=21.0578
+268,10.2862,6.2396,0.0,33,0.2,610.81,(-1.913, -0.428, -2.88),(32.101, -1.826, -1.0),False,False,True,False
+# [00:26:38] [diag @ episode 268] avg_loss=0.1943 avg_mean_abs_q=34.6868 max_grad_norm=21.4470
+269,8.9919,6.4593,0.0,28,0.2,611.39,(1.573, 0.015, -4.058),(30.805, -2.06, -3.581),False,False,True,False
+# [00:27:13] [diag @ episode 269] avg_loss=0.1921 avg_mean_abs_q=34.6493 max_grad_norm=22.5044
+270,7.9524,6.5694,0.0,12,0.2,611.69,(1.629, -1.123, -3.152),(29.984, -3.607, -3.423),False,False,True,False
+# [00:27:31] [diag @ episode 270] avg_loss=0.1825 avg_mean_abs_q=34.5941 max_grad_norm=18.4780
+271,7.9649,6.92,0.0,18,0.2,612.09,(-0.604, 0.214, -3.365),(32.452, -0.52, -3.086),False,False,True,False
+# [00:27:55] [diag @ episode 271] avg_loss=0.1794 avg_mean_abs_q=34.9099 max_grad_norm=21.1238
+272,10.0585,7.1759,0.0,25,0.2,612.61,(-0.618, 1.465, -3.427),(31.314, -3.689, -4.083),False,False,True,False
+# [00:28:26] [diag @ episode 272] avg_loss=0.1727 avg_mean_abs_q=34.5507 max_grad_norm=19.7429
+273,8.171,7.4553,0.0,22,0.2,613.04,(0.897, -0.409, -2.365),(33.903, -0.94, -4.62),False,False,True,False
+# [00:28:52] [diag @ episode 273] avg_loss=0.1994 avg_mean_abs_q=34.8128 max_grad_norm=16.2796
+274,7.7438,7.6385,0.0,30,0.2,613.64,(-0.792, -0.101, -2.595),(33.412, 1.69, -1.0),False,False,True,False
+# [00:29:28] [diag @ episode 274] avg_loss=0.2275 avg_mean_abs_q=35.0029 max_grad_norm=24.7052
+275,10.143,7.7436,0.0,36,0.2,614.33,(-1.051, 0.209, -2.888),(31.301, -0.297, -1.561),False,False,True,False
+# [00:30:09] [diag @ episode 275] avg_loss=0.2200 avg_mean_abs_q=34.7389 max_grad_norm=17.8499
+276,10.1555,7.9654,0.0,27,0.2,614.88,(-1.216, -0.295, -3.146),(31.395, -0.568, -4.606),False,False,True,False
+# [00:30:42] [diag @ episode 276] avg_loss=0.2262 avg_mean_abs_q=34.8514 max_grad_norm=21.9347
+277,7.2183,8.8685,0.0,25,0.2,615.37,(-0.45, 0.861, -1.398),(33.941, 0.309, -2.701),False,False,True,False
+# [00:31:11] [diag @ episode 277] avg_loss=0.2180 avg_mean_abs_q=35.2077 max_grad_norm=22.0104
+278,5.0808,8.348,0.0,58,0.2,616.43,(-0.242, -1.57, -1.787),(26.424, -0.694, -2.426),False,False,True,False
+# [00:32:15] [diag @ episode 278] avg_loss=0.2333 avg_mean_abs_q=35.1171 max_grad_norm=33.1579
+279,6.8781,8.1366,0.0,22,0.2,616.86,(0.236, 0.193, -1.896),(29.4, 2.387, -1.0),False,False,True,False
+# [00:32:41] [diag @ episode 279] avg_loss=0.1775 avg_mean_abs_q=34.7061 max_grad_norm=18.7971
+280,6.4977,7.9911,0.0,31,0.2,617.48,(0.552, -1.565, -3.194),(28.954, 2.291, -6.851),False,False,True,False
+# [00:33:18] [diag @ episode 280] avg_loss=0.2320 avg_mean_abs_q=35.1445 max_grad_norm=34.1742
+# [00:38:27] [greedy-eval @ episode 280] success_rate=0.0% over 5 episodes
+281,8.5132,8.046,0.0,38,0.2,623.35,(-1.147, 0.819, -2.477),(30.993, -1.923, -7.141),False,False,True,False
+# [00:39:10] [diag @ episode 281] avg_loss=0.1880 avg_mean_abs_q=34.9813 max_grad_norm=30.9134
+282,8.8727,7.9274,0.0,58,0.2,624.42,(1.489, 0.954, -2.519),(30.304, -4.093, -3.888),False,False,True,False
+# [00:40:14] [diag @ episode 282] avg_loss=0.2091 avg_mean_abs_q=35.1005 max_grad_norm=36.4918
+283,9.5916,8.0695,0.0,53,0.2,625.39,(-0.728, 1.446, -2.532),(29.5, -0.339, -1.0),False,False,True,False
+# [00:41:13] [diag @ episode 283] avg_loss=0.2067 avg_mean_abs_q=35.1246 max_grad_norm=32.1478
+284,11.7393,8.469,0.0,63,0.2,626.54,(1.45, -0.79, -2.432),(32.547, 2.041, -2.65),False,False,True,False
+# [00:42:22] [diag @ episode 284] avg_loss=0.1955 avg_mean_abs_q=34.8497 max_grad_norm=30.0042
+285,13.0159,8.7563,0.0,62,0.2,627.67,(-1.773, 0.169, -2.384),(33.296, -0.496, -3.923),False,False,True,False
+# [00:43:30] [diag @ episode 285] avg_loss=0.2121 avg_mean_abs_q=35.1662 max_grad_norm=35.2667
+286,8.4339,8.5841,0.0,45,0.2,628.52,(-1.039, -1.031, -2.965),(28.442, 3.786, -1.426),False,False,True,False
+# [00:44:21] [diag @ episode 286] avg_loss=0.1925 avg_mean_abs_q=35.3756 max_grad_norm=37.1593
+287,-19.7296,5.8894,0.0,150,0.2,631.12,(1.075, 0.759, -2.651),(27.854, 0.26, -3.259),False,False,False,True
+# [00:46:56] [diag @ episode 287] avg_loss=0.2023 avg_mean_abs_q=35.3796 max_grad_norm=48.2854
+288,-10.763,4.305,0.0,150,0.2,633.72,(-1.936, 0.158, -3.182),(29.265, 1.772, -2.649),False,False,False,True
+# [00:49:33] [diag @ episode 288] avg_loss=0.2050 avg_mean_abs_q=35.2628 max_grad_norm=36.8462
+289,-9.6433,2.6528,0.0,150,0.2,636.32,(0.595, -1.182, -2.825),(28.085, -3.009, -2.294),False,False,False,True
+# [00:52:08] [diag @ episode 289] avg_loss=0.1812 avg_mean_abs_q=35.2730 max_grad_norm=27.5403
+290,-9.6127,1.0418,0.0,150,0.2,638.92,(-0.891, -1.164, -3.299),(28.259, 0.142, -1.19),False,False,False,True
+# [00:54:45] [diag @ episode 290] avg_loss=0.1822 avg_mean_abs_q=35.5351 max_grad_norm=39.9336
+291,-4.8037,-0.2899,0.0,150,0.2,641.49,(-0.204, 0.978, -2.298),(28.0, 3.679, -3.114),False,False,False,True
+# [00:57:19] [diag @ episode 291] avg_loss=0.1825 avg_mean_abs_q=35.6428 max_grad_norm=51.3409
+292,-2.9307,-1.4702,0.0,150,0.2,644.09,(1.336, 1.173, -3.283),(31.438, -1.731, -5.335),False,False,False,True
+# [00:59:55] [diag @ episode 292] avg_loss=0.1939 avg_mean_abs_q=35.6385 max_grad_norm=30.3984
+293,6.7063,-1.7588,0.0,20,0.2,644.52,(-1.751, 0.204, -2.331),(32.927, 2.52, -3.058),False,False,True,False
+# [01:00:21] [diag @ episode 293] avg_loss=0.1767 avg_mean_abs_q=35.8058 max_grad_norm=29.2518
+294,-4.3151,-3.3642,0.0,150,0.2,647.11,(-0.483, 1.407, -1.738),(31.845, -0.015, -5.611),False,False,False,True
+# [01:02:56] [diag @ episode 294] avg_loss=0.2095 avg_mean_abs_q=35.9743 max_grad_norm=42.2594
+295,-8.8437,-5.5502,0.0,150,0.2,649.71,(-0.33, -0.435, -4.647),(27.28, -1.104, -3.772),False,False,False,True
+# [01:05:32] [diag @ episode 295] avg_loss=0.1787 avg_mean_abs_q=35.8222 max_grad_norm=29.9041
+296,-1.7156,-6.5651,0.0,8,0.2,649.94,(1.096, -0.725, -2.535),(25.276, 0.408, -4.209),False,False,True,False
+# [01:05:46] [diag @ episode 296] avg_loss=0.2173 avg_mean_abs_q=36.6070 max_grad_norm=20.5837
+297,1.1772,-4.4744,0.0,104,0.2,651.77,(0.704, 0.241, -4.388),(29.322, 1.764, -1.0),False,False,True,False
+# [01:07:35] [diag @ episode 297] avg_loss=0.1980 avg_mean_abs_q=36.2272 max_grad_norm=44.3003
+298,-5.0579,-3.9039,0.0,150,0.2,654.34,(0.105, -0.095, -1.191),(32.426, -3.364, -3.216),False,False,False,True
+# [01:10:10] [diag @ episode 298] avg_loss=0.1756 avg_mean_abs_q=36.1945 max_grad_norm=37.8660
+299,-1.7519,-3.1148,0.0,13,0.2,654.62,(0.192, -0.265, -1.71),(33.641, 0.759, -1.0),False,False,True,False
+# [01:10:27] [diag @ episode 299] avg_loss=0.2011 avg_mean_abs_q=36.1080 max_grad_norm=29.2036
+300,1.5071,-2.0028,0.0,27,0.2,655.17,(-1.18, -0.925, -3.445),(30.23, 2.853, -6.448),False,False,True,False
+# [01:11:00] [diag @ episode 300] avg_loss=0.1966 avg_mean_abs_q=36.1678 max_grad_norm=32.5025
+# [01:24:00] [greedy-eval @ episode 300] success_rate=0.0% over 5 episodes
+# [01:24:00] Training complete. 300 episodes in 668.2 min. Final avg reward (last 10): -2.00. Final success rate (last 10): 0.0%.

@@ -25,13 +25,13 @@ from logger import TrainingLogger
 
 # ---------------- config ----------------
 
-GOAL_POSITION = (50, 0, -3)
+GOAL_POSITION = (70.0, 60.0, -5.0)
 START_POSITION = (0, 0, -3)
 MAX_EPISODE_STEPS = 150
 DT = 0.5
 SPEED = 2.0
 
-NUM_EPISODES = 200
+NUM_EPISODES = 250
 SAVE_EVERY = 10
 PRINT_EVERY = 1
 EVAL_EVERY = 20
@@ -42,7 +42,7 @@ EVAL_EPISODES = 5
 # d3qn_random_start_goal_nodepth_200 run.
 WARM_START_CHECKPOINT = os.path.join(
     os.path.dirname(__file__), "..", "results",
-    "cityenvision_run_400_20260831_184145_ep400.pt"  # <-- verify this matches your actual saved filename
+    "cityenvision_v2_250_20260829_124801_ep250.pt "  # <-- verify this matches your actual saved filename
 )
 
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "..", "results")
@@ -93,8 +93,8 @@ def main():
         dt=DT,
         speed=SPEED,
         randomize_positions=True,
-        start_jitter_radius=1.0,
-        goal_jitter_radius=3.0,
+        start_jitter_radius=2.0,
+        goal_jitter_radius=5.0,
     )
 
     agent_config = dict(
@@ -104,7 +104,7 @@ def main():
         gamma=0.99,
         buffer_capacity=1_000_000,
         batch_size=32,
-        epsilon_start=0.2,          # reduced — warm-started, not starting cold
+        epsilon_start=0.3,          # reduced — warm-started, not starting cold
         epsilon_end=0.05,
         epsilon_decay_steps=10000,   # shorter — less ground to re-explore
         target_update_freq=250,
@@ -135,8 +135,8 @@ def main():
         "goal_position": GOAL_POSITION,
         "start_position": START_POSITION,
         "randomize_positions": True,
-        "start_jitter_radius": 1.0,
-        "goal_jitter_radius": 3.0,
+        "start_jitter_radius": 2.0,
+        "goal_jitter_radius": 5.0,
         "max_episode_steps": MAX_EPISODE_STEPS,
         "dt": DT,
         "speed": SPEED,

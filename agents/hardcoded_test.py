@@ -24,15 +24,15 @@ from datetime import datetime
 
 # ---- config (matches your logged run configs) ----
 START_POSITION = (0.0, 0.0, -3.0)
-GOAL_POSITION = (70.0, 30.0, -3.0)
+GOAL_POSITION = (120, -30, -5)
 DT = 0.5                # seconds per step, matches your env
 SPEED = 2.0              # m/s, matches your env's action magnitude
 MAX_STEPS = 150           # matches max_episode_steps
 SUCCESS_RADIUS = 2.0      # matches accept_radius in airsim_env.py
 OOB_BOUNDS = {            # matches default workspace_bounds in airsim_env.py
-    "x_min": -100, "x_max": 100,
-    "y_min": -100, "y_max": 100,
-    "z_min": -50, "z_max": 0,
+    "x_min": -250, "x_max": 250,
+    "y_min": -250, "y_max": 250,
+    "z_min": -100, "z_max": 0,
 }
 # ----------------------------------------------------
 
