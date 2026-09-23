@@ -376,7 +376,7 @@ def main():
         batch_size=32,
         epsilon_start=1.0,
         epsilon_end=0.2,
-        epsilon_decay_steps=24000,  
+        epsilon_decay_steps=43000,  
         target_update_freq=250,
         use_double=True,
         use_dueling=True,
@@ -395,6 +395,7 @@ def main():
         "dt": DT,
         "speed": SPEED,
         "state_dim": AirSimEnv.STATE_DIM,
+        "environment": env.env_name,
         "action_dim": env.action_space.n,
         **agent_config,
     })

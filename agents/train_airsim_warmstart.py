@@ -95,6 +95,7 @@ def main():
         randomize_positions=True,
         start_jitter_radius=2.0,
         goal_jitter_radius=5.0,
+      
     )
 
     agent_config = dict(
@@ -141,6 +142,7 @@ def main():
         "dt": DT,
         "speed": SPEED,
         "state_dim": AirSimEnv.STATE_DIM,
+        "environment": env.env_name,
         "action_dim": env.action_space.n,
         **agent_config,
     })

@@ -106,7 +106,7 @@ from boltzman_aget import BoltzmannDQNAgent  # network/select_action_greedy only
 
 # Must match the config the checkpoint was trained with (see the
 # "# ---- config ----" header block in the run's .log file).
-GOAL_POSITION = (30, 0, -3)
+GOAL_POSITION = (70, 0, -5)
 START_POSITION = (0, 0, -3)
 MAX_EPISODE_STEPS = 150
 DT = 0.5
