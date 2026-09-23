@@ -297,13 +297,13 @@ from dqn_agent import DQNAgent
 
 from logger import TrainingLogger
 
-GOAL_POSITION = (70, 30, -5)      # adjust to a real reachable point in Blocks
+GOAL_POSITION = (50, 40, -5)      # adjust to a real reachable point in Blocks
 START_POSITION = (0, 0, -3)
 MAX_EPISODE_STEPS = 150          # keep modest — AirSim steps are real-time, not instant
 DT = 0.5
 SPEED = 2.0
 
-NUM_EPISODES = 10               # budgeted for ~3 hrs at observed ~40s/episode
+NUM_EPISODES = 300               # budgeted for ~3 hrs at observed ~40s/episode
 SAVE_EVERY = 10                  # checkpoint frequency (episodes)
 PRINT_EVERY = 1                  # AirSim episodes are slow — print every episode, not every 10
 
@@ -376,7 +376,7 @@ def main():
         batch_size=32,
         epsilon_start=1.0,
         epsilon_end=0.2,
-        epsilon_decay_steps=24000,  
+        epsilon_decay_steps=43000,  
         target_update_freq=250,
         use_double=True,
         use_dueling=True,
@@ -388,12 +388,13 @@ def main():
         "goal_position": GOAL_POSITION,
         "start_position": START_POSITION,
         "randomize_positions": True,
-        "start_jitter_radius": 1.0,
-        "goal_jitter_radius": 3.0,
+        "start_jitter_radius": 2.0,
+        "goal_jitter_radius": 5.0,
         "max_episode_steps": MAX_EPISODE_STEPS,
         "dt": DT,
         "speed": SPEED,
         "state_dim": AirSimEnv.STATE_DIM,
+        "environment": env.env_name,
         "action_dim": env.action_space.n,
         **agent_config,
     })

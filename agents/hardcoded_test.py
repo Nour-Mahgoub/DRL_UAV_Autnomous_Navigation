@@ -23,8 +23,13 @@ import os
 from datetime import datetime
 
 # ---- config (matches your logged run configs) ----
-START_POSITION = (0.0, 0.0, -3.0)
-GOAL_POSITION = (70.0, 30.0, -3.0)
+# START_POSITION = (0.0, 0.0, -3.0)
+# GOAL_POSITION = (75.0, -35.0, -1.2)
+# START_POSITION = (0.077, -0.597, -3.23)
+# GOAL_POSITION = (74.829, 30.036, -5.386)
+
+GOAL_POSITION = (50, 40, -12)      # adjust to a real reachable point in Blocks
+START_POSITION = (0, 0, -3)
 DT = 0.5                # seconds per step, matches your env
 SPEED = 2.0              # m/s, matches your env's action magnitude
 MAX_STEPS = 150           # matches max_episode_steps
