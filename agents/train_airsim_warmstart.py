@@ -25,13 +25,13 @@ from logger import TrainingLogger
 
 # ---------------- config ----------------
 
-GOAL_POSITION = (70.0, 60.0, -5.0)
+GOAL_POSITION = (50, 40, -12)
 START_POSITION = (0, 0, -3)
 MAX_EPISODE_STEPS = 150
 DT = 0.5
 SPEED = 2.0
 
-NUM_EPISODES = 250
+NUM_EPISODES = 300
 SAVE_EVERY = 10
 PRINT_EVERY = 1
 EVAL_EVERY = 20
@@ -42,7 +42,7 @@ EVAL_EPISODES = 5
 # d3qn_random_start_goal_nodepth_200 run.
 WARM_START_CHECKPOINT = os.path.join(
     os.path.dirname(__file__), "..", "results",
-    "cityenvision_v2_250_20260829_124801_ep250.pt "  # <-- verify this matches your actual saved filename
+    "blocks_basemodel_v2_nodepth_20260915_125208_ep300.pt"  # <-- verify this matches your actual saved filename
 )
 
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "..", "results")
@@ -141,6 +141,7 @@ def main():
         "dt": DT,
         "speed": SPEED,
         "state_dim": AirSimEnv.STATE_DIM,
+        "environment": env.env_name,
         "action_dim": env.action_space.n,
         **agent_config,
     })
